@@ -12,9 +12,15 @@
     --black: 10, 10, 10;
 }
 
-@media only screen and (max-width: 2000px) {
+@media only screen and (min-width: 2500px) {
     :root {
         --font-size-multiplier: 1.2;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+    :root {
+        --font-size-multiplier: 1.1;
     }
 }
 
