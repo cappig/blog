@@ -18,12 +18,12 @@ a {
     color: rgb(var(--dark-blue));
 }
 
-.forest-bg {
-    background-image: url("../images/lastblade2-forgotten-forest-stage.gif");
+.normal-bg {
+    background-image: url("../images/jwst_main.jpg");
 }
 
-.okina-bg {
-    background-image: url("../images/lastblade-okina-stage-animate.gif");
+.error-bg {
+    background-image: url("../images/jwst_red.jpg");
 }
 
 .border {
@@ -146,7 +146,7 @@ a {
 }
 
 .main-title:hover {
-    text-shadow: 5px 5px 15px rgba(var(--teal), 0.5);
+    text-shadow: 5px 5px 15px rgba(var(--maroon), 0.5);
 }
 
 .navbar-windows {
