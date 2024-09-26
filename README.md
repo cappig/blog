@@ -11,3 +11,7 @@ Background images (images/jwst_main.jpg, jwst_red.jpg) are licensed under the te
 The icons come from windows 98 and were downloaded from [Alex Meub's blog](https://win98icons.alexmeub.com/).
 
 The Caco (images/cacodemon.png) is a sprite from id Software's 1993 masterpiece - Doom. (duh)
+
+The [MS W98 UI](https://martyr.shop/products/ms-w98-ui) font is a conversion of the original MS Sans Serif.
+
+The [Blox font](https://www.dafont.com/blox.font) is created by [Brian Kent aka Ænigma](https://www.1001fonts.com/users/kentpw/)
