@@ -6,7 +6,7 @@ I'll add more stuff to this...
 
 ## Attribution
 
-Background images (images/jwst_main.jpg, jwst_red.jpg) are licensed under the terms of the [CC BY 2.0 license](https://creativecommons.org/licenses/by/2.0/). They come from NASA's incredible [James Webb Space Telescope](https://en.wikipedia.org/wiki/James_Webb_Space_Telescope).
+The background image (images/dolomites.webp) is my own work - licensed under the terms of the [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/deed.en).
 
 The icons come from windows 98 and were downloaded from [Alex Meub's blog](https://win98icons.alexmeub.com/).
 

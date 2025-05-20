@@ -1,17 +1,16 @@
 :root {
     --bg: #5e523d;
 
-    --window-bg: 198, 198, 198;
+    --window-bg: 168, 168, 168;
     --window-highlight: 239, 239, 239;
     --window-shadow: 0, 0, 0;
 }
 
 body {
-    background-size: cover !important;
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100% auto;
-    image-rendering: pixelated;
+    background-position-y: 10%;
 }
 
 a {
@@ -19,11 +18,7 @@ a {
 }
 
 .normal-bg {
-    background-image: url("../images/jwst_main.jpg");
-}
-
-.error-bg {
-    background-image: url("../images/jwst_red.jpg");
+    background-image: url("../images/dolomites.webp");
 }
 
 .border {
@@ -35,10 +30,8 @@ a {
 
 .window {
     padding: 3px;
-    background-color: rgba(var(--window-bg), 0.6);
-    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
+    background-color: rgb(var(--window-bg));
+    /* box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 10px; */
 
     width: fit-content;
     height: fit-content;
@@ -106,10 +99,7 @@ a {
 }
 
 .navbar {
-    background-color: rgba(var(--window-bg), 0.6);
-    -webkit-backdrop-filter: blur(15px);
-    backdrop-filter: blur(15px);
-
+    background-color: rgb(var(--window-bg));
     padding: 0.25rem !important;
     border-top: 2px solid #ededed;
     position: absolute;
@@ -146,7 +136,7 @@ a {
 }
 
 .main-title:hover {
-    text-shadow: 5px 5px 15px rgba(var(--maroon), 0.5);
+    text-shadow: 0px 0px 5px rgba(var(--light-blue), 0.4);
 }
 
 .navbar-windows {
@@ -170,7 +160,7 @@ a {
 
 .navbar-tray {
     border-left: 1px solid rgba(var(--window-highlight), 0.5);
-    background-color: rgba(var(--window-bg), 0.75);
+    background-color: rgba(var(--window-shadow), 0.15);
     margin-left: 0.5rem;
     padding: 0.2rem;
     display: flex;
