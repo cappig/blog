@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/fonts.css">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <title>cappig.dev</title>
+</head>
+
+<body>
+    {% include "partial/header.html" %}
+
+    <main>
+        <div class="container" id="index">
+            <div class="hero">
+                <div class="headpiece"></div>
+                <p>Hello, welcome to my little website!</p>
+            </div>
+
+            <div class="text" id="blurb">
+{{ index_blurb | safe }}
+            </div>
+
+            <div class="posts">
+                <div class="posts_head">Latest blog posts:</div>
+
+                {%- for post in latest_posts %}
+                <a href="/blog/{{ post.slug }}">
+                    <div class="text">{{ post.title }}<span class="date">{{ post.date }}</span></div>
+                </a>
+                {%- else %}
+                <p>... its lonely here</p>
+                {%- endfor %}
+            </div>
+        </div>
+    </main>
+
+    {% include "partial/theme_button.html" %}
+
+    <script src="/static/js/theme.js"></script>
+</body>
+
+</html>

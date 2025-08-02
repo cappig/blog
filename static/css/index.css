@@ -1,0 +1,110 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-style: italic;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+
+.headpiece {
+    width: 100%;
+    max-height: 22rem;
+    aspect-ratio: 16/5;
+    mask-image: url('/static/img/headpice.svg');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    display: inline-block;
+    background-color: rgba(var(--text-primary), 1);
+}
+
+#index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 90%;
+    margin: auto;
+}
+
+#index>div {
+    width: 100%;
+}
+
+
+.posts {
+    margin-top: 4rem;
+}
+
+.posts .text {
+    margin: 0.5rem 0;
+    padding: 0.5em 1.5em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.posts a {
+    text-decoration: unset;
+    color: unset;
+}
+
+.posts a:hover {
+    text-decoration: unset;
+}
+
+.posts .text:hover {
+    background-color: rgba(var(--accent-hover), 0.25);
+}
+
+.posts .text:last-child {
+    margin-bottom: 2rem;
+}
+
+.posts_head {
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    font-weight: 500;
+}
+
+
+.date {
+    font-size: 1.3rem;
+    color: rgb(var(--text-secondary));
+    font-weight: 200;
+}
+
+
+@media (max-width: 1050px) {
+    #blurb {
+        margin-top: 1rem;
+    }
+
+    #index {
+        width: 90%;
+    }
+
+    .hero {
+        margin: 2rem 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .posts {
+        margin-top: 2rem;
+    }
+
+    .date {
+        font-size: 0.65rem;
+    }
+
+    .hero {
+        margin: 1rem 0;
+    }
+
+    .posts_head {
+        padding-bottom: 1rem;
+    }
+}

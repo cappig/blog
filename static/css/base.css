@@ -1,0 +1,266 @@
+:root {
+    --bg-primary: 255, 255, 248;
+    --bg-secondary: 235, 235, 215;
+    --text-primary: 35, 35, 35;
+    --text-secondary: 55, 55, 55;
+
+    --accent-hover: 77, 161, 163;
+    --accent-light: 255, 172, 20;
+
+}
+
+[data-theme="dark"] {
+    --bg-primary: 35, 35, 35;
+    --bg-secondary: 55, 55, 55;
+    --text-primary: 255, 255, 248;
+    --text-secondary: 235, 235, 215;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+::selection {
+    background-color: rgba(var(--accent-hover), 0.5);
+}
+
+body {
+    background-color: rgb(var(--bg-primary));
+    color: rgb(var(--text-primary));
+    min-height: 100vh;
+    max-width: 2300px;
+    width: 100vw;
+    margin: auto;
+    padding: 2rem 4rem;
+}
+
+a {
+    font-size: inherit;
+    color: inherit;
+    text-decoration: unset;
+}
+
+main a {
+    text-decoration: 0.1em underline dotted;
+    text-underline-offset: 0.1rem;
+    color: rgb(var(--accent-hover));
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+abbr {
+    font-size: inherit;
+    cursor: help;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+header a {
+    color: unset;
+}
+
+header a:hover {
+    color: rgb(var(--accent-hover));
+}
+
+.title {
+    position: relative;
+    font-family: 'UnifrakturCook', serif;
+    font-size: 6.5rem;
+    font-weight: 700;
+    margin-left: 0.8em;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.title::before {
+    font-family: 'Noto Sans Egyptian Hieroglyphs';
+    content: "𓆑";
+    position: absolute;
+    width: 0;
+    height: auto;
+    right: 5.8em;
+    bottom: -0.3em;
+}
+
+.title::after {
+    font-family: 'Noto Sans Egyptian Hieroglyphs';
+    content: "𓆓";
+    position: absolute;
+    width: 0;
+    height: auto;
+    left: 4.4em;
+    top: -0.25em;
+}
+
+.title:hover::before,
+.title:hover::after {
+    color: rgb(var(--accent-light));
+}
+
+nav {
+    display: flex;
+    font-size: 1.87rem;
+    gap: 0.5rem;
+    letter-spacing: 0.01rem;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+nav * {
+    padding: 1rem;
+}
+
+main {
+    padding: 2rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.7rem;
+    line-height: 2.55rem;
+    letter-spacing: 0.01rem;
+    margin-top: 3rem;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.line {
+    width: 100%;
+    height: 20px;
+    mask-image: url('/static/img/line.svg');
+    background-color: rgb(var(--text-primary));
+    background-repeat: repeat-x;
+}
+
+.container {
+    line-height: 2.55rem;
+    font-size: 1.7rem;
+}
+
+
+.text {
+    background: rgba(var(--bg-secondary), 0.2);
+    color: rgb(var(--text-primary));
+    text-align: left;
+    margin: 1rem 0;
+    padding: 1em 1.5em;
+}
+
+
+
+.theme {
+    cursor: pointer;
+    font-size: unset;
+    border: none;
+    background: rgba(var(--bg-secondary), 0.4);
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+}
+
+.theme:hover {
+    background: rgb(var(--bg-secondary));
+}
+
+.theme_icon {
+    mask-image: url('/static/img/luna.svg');
+    mask-repeat: no-repeat;
+    mask-position: center;
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: 70%;
+    mask-size: contain;
+    vertical-align: middle;
+    display: inline-block;
+    background-color: rgb(var(--text-primary));
+}
+
+
+@media (max-width: 1500px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    main {
+        margin: 5%;
+        margin-top: 2.5rem;
+        margin-bottom: 20%;
+        padding: 0;
+    }
+
+    .title {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 1050px) {
+    body {
+        padding: 0;
+    }
+
+    .container {
+        line-height: 1.8rem;
+        font-size: 1.4rem;
+    }
+
+    .text {
+        margin: 0;
+    }
+
+    .theme {
+        width: 3rem;
+        height: 3rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .title {
+        font-size: 3rem;
+    }
+
+    nav {
+        font-size: 1rem;
+
+    }
+
+    header {
+        padding: 1.4rem;
+    }
+
+    .date {
+        font-size: 0.65rem;
+    }
+
+    .container {
+        line-height: 1.6rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .container {
+        line-height: 1.2rem;
+        font-size: 0.8rem;
+    }
+}

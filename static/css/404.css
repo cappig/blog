@@ -1,0 +1,31 @@
+#not_found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.four_oh_four {
+    font-family: 'UnifrakturCook', serif;
+    font-size: 8rem;
+    font-weight: 700;
+    padding-bottom: 4rem;
+    align-self: center;
+}
+
+.four_text {
+    align-self: center;
+    text-align: center;
+}
+
+.four_container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media (max-width: 800px) {
+    .four_oh_four {
+        font-size: 6rem;
+    }
+}

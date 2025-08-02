@@ -1,0 +1,104 @@
+:root {
+    --code-pink: #e14775;
+    --code-orange: #f07c41;
+    --code-yellow: #e3b902;
+    --code-green: #4caf50;
+    --code-blue: #0097a7;
+    --code-purple: #9c27b0;
+    --code-grey: #8d8d8d;
+
+    --code-default: #29242a;
+}
+
+[data-theme="dark"] {
+    --code-pink: #ff4689;
+    --code-orange: #ff9e67;
+    --code-yellow: #e6db74;
+    --code-green: #a6e22e;
+    --code-blue: #4dd0e1;
+    --code-purple: #c792ea;
+    --code-grey: #707070;
+
+    --code-default: #e2e2dd;
+}
+
+
+.highlight pre {
+    background: rgba(var(--bg-secondary), 0.2);
+    color: var(--code-default);
+    margin: 1.5rem 0;
+    padding: 1em 1.5em;
+    overflow: auto;
+    line-height: 110%;
+}
+
+/* Comments */
+.highlight .c,
+.highlight .ch,
+.highlight .cm,
+.highlight .cp,
+.highlight .cpf,
+.highlight .c1,
+.highlight .cs {
+    color: var(--code-grey);
+    font-style: italic;
+}
+
+/* Keywords */
+.highlight .k,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr {
+    color: var(--code-pink);
+}
+
+/* Constants, types, builtins */
+.highlight .kc,
+.highlight .kt,
+.highlight .nb,
+.highlight .nc,
+.highlight .bp {
+    color: var(--code-blue);
+}
+
+/* Numbers */
+.highlight .m,
+.highlight .mb,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo,
+.highlight .il {
+    color: var(--code-purple);
+}
+
+/* Strings */
+.highlight .s,
+.highlight .sa,
+.highlight .sb,
+.highlight .sc,
+.highlight .dl,
+.highlight .sd,
+.highlight .s2,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .sr,
+.highlight .s1,
+.highlight .ss {
+    color: var(--code-yellow);
+}
+
+/* Function names and definitions */
+.highlight .nd,
+.highlight .nf {
+    color: var(--code-green);
+}
+
+/* Function names */
+.highlight .nf,
+.highlight .fm {
+    font-weight: bold;
+}

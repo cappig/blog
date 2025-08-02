@@ -1,0 +1,5 @@
+python-frontmatter
+markdown
+jinja2
+unidecode
+pygments
