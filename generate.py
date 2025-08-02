@@ -2,6 +2,8 @@ import frontmatter
 import markdown
 import re
 import unidecode
+import subprocess
+from datetime import datetime, timezone
 from jinja2 import Environment, FileSystemLoader
 import os
 
@@ -18,6 +20,14 @@ def slugify(text):
     text = re.sub(r"-+", "-", text)
 
     return text
+
+
+def get_git_hash():
+    return (
+        subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
+        .strip()
+        .decode()
+    )
 
 
 def collect_posts():
@@ -74,7 +84,12 @@ def generate_about():
 
     template = env.get_template("about.html")
 
-    rendered = template.render(content=about_html, **about_post.metadata)
+    rendered = template.render(
+        content=about_html,
+        git_hash=get_git_hash(),
+        time=datetime.now(timezone.utc).strftime("%d/%m/%Y %H:%M UTC"),
+        **about_post.metadata,
+    )
 
     output_path = os.path.join(output_dir, "about.html")
 
@@ -118,6 +133,10 @@ def generate_post(post):
 
 
 def main():
+    # Ensure output dirs exists
+    os.makedirs(output_dir, exist_ok=True)
+    os.makedirs(os.path.join(output_dir, "blog"), exist_ok=True)
+
     posts = collect_posts()
 
     generate_index(posts)

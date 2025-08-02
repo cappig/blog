@@ -23,10 +23,10 @@
     box-sizing: border-box;
 }
 
-
 ::selection {
     background-color: rgba(var(--accent-hover), 0.5);
 }
+
 
 body {
     background-color: rgb(var(--bg-primary));
@@ -155,7 +155,6 @@ main {
     margin: 1rem 0;
     padding: 1em 1.5em;
 }
-
 
 
 .theme {
