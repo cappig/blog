@@ -1,5 +1,6 @@
 ---
 title: Stupid simple blog
+description: How I generate my simple little website.
 date: 03/08/2025
 ---
 

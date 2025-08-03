@@ -1,0 +1,21 @@
+services:
+  caddy:
+    image: ghcr.io/caddybuilds/caddy-cloudflare:2.10
+    container_name: website
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./site:/srv
+      - ./static/:/srv/static
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:
