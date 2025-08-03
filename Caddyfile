@@ -11,7 +11,7 @@ cappig.dev, *.cappig.dev {
 	rewrite @root /index.html
 
     @robots path /robots.txt
-    rewrite @robots /srv/static/robots.txt
+    rewrite @robots /static/robots.txt
 
 	try_files {path} {path}.html /404.html
 
