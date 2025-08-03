@@ -17,7 +17,7 @@ So, in the year of our Lord 2025, the web is a much different place than it was 
 
 But this is a low-traffic personal blog; there really isn't much need for any of that. Plus, I don't want to deal with web frameworks for this. While I'm sure that some of them are good (I've had a pleasant experience with [Svelte](https://svelte.dev/) in the past), the rest are... not my cup of tea (my experience with [React](https://react.dev/) was not exactly pleasant). And I get it, these frameworks are made for much larger interactive web apps, but still, I want my blog to be as simple as possible.
 
-OK, so what about a static site generator? They are the perfect fit for sites like mine. [Hugo](https://gohugo.io/), [Jekyll](https://gohugo.io/) and many other free and open source programs exist out there. But I'm lazy, and I don't want to read the documentation, install a whole bunch of packages, and set up environments just to build my puny little blog.
+OK, so what about a static site generator? They are the perfect fit for sites like mine. [Hugo](https://gohugo.io/), [Jekyll](https://jekyllrb.com/) and many other free and open source programs exist out there. But I'm lazy, and I don't want to read the documentation, install a whole bunch of packages, and set up environments just to build my puny little blog.
 
 So I implemented the first thing that came to mind --- a Python script that takes in markdown, passes it through some templates, and spits out plain old HTML files.
 
