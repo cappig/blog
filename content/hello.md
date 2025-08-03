@@ -27,18 +27,18 @@ It works something like this. We call this function:
 
 ```python
 def generate_html():
- template_meta = frontmatter.load("source.md")
- html = markdown.markdown(template_meta.content)
+    source = frontmatter.load("source.md")
+    html = markdown.markdown(source.content)
 
- template = env.get_template("template.html")
+    template = env.get_template("template.html")
 
- rendered = template.render(
+    rendered = template.render(
         content=html,
- **about_post.metadata,
- )
+        **source.metadata,
+    )
 
     with open("output.html", "w", encoding="utf-8") as f:
- f.write(rendered)
+        f.write(rendered)
 ```
 
 to run some markdown:
