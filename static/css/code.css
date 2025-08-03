@@ -57,6 +57,7 @@
 .highlight .kc,
 .highlight .kt,
 .highlight .nb,
+.highlight .nt,
 .highlight .nc,
 .highlight .bp {
     color: var(--code-blue);

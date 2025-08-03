@@ -1,9 +1,11 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur feugiat quam non neque pellentesque rutrum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum vitae imperdiet nulla, rhoncus mollis sem. Fusce vitae odio dolor. Nam egestas nulla vitae justo malesuada, tempor viverra risus malesuada. Suspendisse feugiat interdum dolor. Nullam iaculis hendrerit lacus a pretium.
+Hello I'm Matej, I go by Cappig online. I'm a programmer and I make random stuff sometimes.
 
-Nunc nec commodo magna. Sed et neque vel dui feugiat posuere at vitae quam. Cras efficitur ultricies nunc, sit amet faucibus magna tincidunt vitae. Aenean viverra pulvinar dui ac bibendum. Vivamus tincidunt nulla eu eros iaculis, et tempor risus gravida. Nullam tempus tellus dolor, pharetra dictum lacus vulputate ac. Cras tristique felis vel neque molestie lacinia.
+I like C, python, osdev/low level programming, playing Doom, philosophy and chilling ^_^.
 
-Suspendisse dictum arcu erat, vel eleifend tellus accumsan ut. Proin enim nisi, convallis vitae massa non, malesuada sagittis nulla. Nam mollis lacus ut mi condimentum, at aliquet felis rhoncus. Morbi sollicitudin lacinia turpis. Curabitur in ullamcorper erat. Nulla suscipit commodo augue nec malesuada. Aenean et nisi euismod, sodales ex at, egestas ligula. Morbi vel imperdiet justo. Sed fringilla pellentesque sollicitudin. Praesent tellus tortor, lobortis eu convallis eu, faucibus ut velit. Aenean in sagittis nulla. Quisque porttitor vel ipsum nec porttitor. Ut aliquam nulla sed tortor venenatis cursus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+Currently I'm a computer science undergrad at the [University of Zagreb](https://www.fer.unizg.hr/en/studies/bachelor/computing).
 
-Nulla accumsan ex et nibh faucibus, a semper tortor suscipit. Etiam commodo velit at congue pharetra. Ut imperdiet risus id nunc pretium pretium. Donec egestas nisi scelerisque interdum congue. Praesent volutpat ligula at lacus tincidunt varius. Vestibulum rutrum sodales est, ac ullamcorper purus dignissim sit amet. Fusce vitae dolor leo. Nulla justo dui, tempor at libero at, mattis pretium metus. Maecenas quis tempor enim. Phasellus egestas odio nec arcu consectetur pretium. Maecenas nisi ante, scelerisque eget efficitur ac, hendrerit ultrices odio. Suspendisse malesuada auctor purus. Donec sodales bibendum nunc, dignissim imperdiet nibh rutrum id. Quisque in erat massa.
+This is my personal 'blog' and project repository. I might post some more stuff on here in the near future.
 
-Donec tristique, risus ut viverra elementum, nisi est dapibus nunc, ac tincidunt libero libero sed orci. Donec tincidunt nunc a dui dignissim sollicitudin. Integer imperdiet est erat, eu porta nisi pretium nec. Integer mauris ante, blandit vel eros sed, pellentesque sodales arcu. Quisque laoreet libero ut ornare rutrum. Curabitur pulvinar id neque in sodales. Phasellus eu consequat ex.
+This site is hosted on the remnants of an old Asus laptop that sits bellow my table. It's generated from markdown sources using jinja html templates and some trivial python code.
+
+You can find me and my code on [Github](https://github.com/cappig). You can e-mail me at <matt@cappig.dev>.

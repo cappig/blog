@@ -20,6 +20,20 @@ main article {
     padding-bottom: 2rem;
 }
 
+ul {
+    padding-left: 1.5em;
+}
+
+h3 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+p {
+    margin: 0.5rem 0;
+}
+
 
 @media (max-width: 1500px) {
     .article_title {

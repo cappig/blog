@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/static/css/fonts.css">
     <link rel="stylesheet" href="/static/css/base.css">
     <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/blog.css">
     <title>cappig.dev</title>
 </head>
 
@@ -15,19 +16,13 @@
 
     <main>
         <div class="container" id="index">
-            <div class="hero">
-                <div class="headpiece"></div>
-                <p>Hello, welcome to my little website!</p>
-            </div>
-
-            <div class="text" id="blurb">
-{{ index_blurb | safe }}
-            </div>
-
             <div class="posts">
-                <div class="posts_head">Latest blog posts:</div>
+                <div class="blog_hero">
+                    <div class="book"></div>
+                    <p>Blog posts:</p>
+                </div>
 
-                {%- for post in latest_posts %}
+                {%- for post in posts %}
                 <a href="/blog/{{ post.slug }}">
                     <div class="text">{{ post.title }}<span class="date">{{ post.date }}</span></div>
                 </a>

@@ -57,7 +57,9 @@ def generate_index(posts):
         raise FileNotFoundError("Index page markdown not found")
 
     index_post = frontmatter.load(index_path)
-    index_html = markdown.markdown(index_post.content, extensions=["extra"])
+    index_html = markdown.markdown(
+        index_post.content, extensions=["extra", "smarty", "nl2br"]
+    )
 
     template = env.get_template("index.html")
 
@@ -80,7 +82,8 @@ def generate_about():
         raise FileNotFoundError("about page markdown not found")
 
     about_post = frontmatter.load(about_path)
-    about_html = markdown.markdown(about_post.content, extensions=["extra"])
+    about_html = markdown.markdown(
+        about_post.content, extensions=["extra", "smarty"])
 
     template = env.get_template("about.html")
 
@@ -92,6 +95,31 @@ def generate_about():
     )
 
     output_path = os.path.join(output_dir, "about.html")
+
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write(rendered)
+
+    print(f"Generated: {output_path}")
+
+
+def generate_links():
+    links_path = os.path.join(content_dir, "_links.md")
+
+    if not os.path.isfile(links_path):
+        raise FileNotFoundError("lniks page markdown not found")
+
+    links_post = frontmatter.load(links_path)
+    links_html = markdown.markdown(
+        links_post.content, extensions=["extra", "smarty"])
+
+    template = env.get_template("links.html")
+
+    rendered = template.render(
+        content=links_html,
+        **links_post.metadata,
+    )
+
+    output_path = os.path.join(output_dir, "links.html")
 
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(rendered)
@@ -118,7 +146,7 @@ def generate_post(post):
     article = frontmatter.load(post["filepath"])
     article_html = markdown.markdown(
         article.content,
-        extensions=["extra", "codehilite"],
+        extensions=["extra", "codehilite", "smarty", "nl2br"],
         extension_configs={"codehilite": {"css_class": "highlight"}},
     )
 
@@ -132,6 +160,19 @@ def generate_post(post):
     print(f"Generated: {output_path}")
 
 
+def generate_blog(posts):
+    template = env.get_template("blog.html")
+
+    rendered = template.render(posts=posts)
+
+    output_path = os.path.join(output_dir, "blog.html")
+
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write(rendered)
+
+    print(f"Generated: {output_path}")
+
+
 def main():
     # Ensure output dirs exists
     os.makedirs(output_dir, exist_ok=True)
@@ -139,8 +180,10 @@ def main():
 
     posts = collect_posts()
 
+    generate_blog(posts)
     generate_index(posts)
     generate_about()
+    generate_links()
     generate_404()
 
     for post in posts:

@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/fonts.css">
     <link rel="stylesheet" href="/static/css/base.css">
-    <link rel="stylesheet" href="/static/css/code.css">
     <link rel="stylesheet" href="/static/css/article.css">
-    <title>cappig.dev | {{ title }}</title>
+    <link rel="stylesheet" href="/static/css/blog.css">
+    <title>cappig.dev | links</title>
 </head>
 
 <body>
@@ -16,12 +16,13 @@
 
     <main>
         <div class="container" id="article">
-            <div class="article_title">{{ title }}</div>
-            <div class="article_date">{{ date }}</div>
+            <div class="article_title">Interesting links</div>
 
             <article>
-{{ content | safe }}
+                {{ content | safe }}
             </article>
+
+            <div class="bookshelf"></div>
         </div>
     </main>
 

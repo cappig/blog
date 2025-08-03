@@ -1,4 +1,5 @@
 import http.server
+import socket
 import socketserver
 import os
 
@@ -16,7 +17,7 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
         if path == "/":
             full_path = os.path.join(os.getcwd(), SITE_DIR, "index.html")
         elif path.startswith("/static/"):
-            rel_path = path[len("/static/") :]
+            rel_path = path[len("/static/"):]
             full_path = os.path.join(os.getcwd(), STATIC_DIR, rel_path)
         else:
             rel_path = path.lstrip("/")
@@ -36,11 +37,23 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
             super().send_error(code, message, explain)
 
 
+def get_local_ip():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("8.8.8.8", 1))
+
+    return s.getsockname()[0]
+
+
 def run(server_class=http.server.HTTPServer, handler_class=CustomHandler):
-    print(f"Serving at http://localhost:{PORT}")
+    local_ip = get_local_ip()
+
+    print(f"Serving at http://{local_ip}:{PORT}")
 
     with ReusableTCPServer(("", PORT), handler_class) as httpd:
-        httpd.serve_forever()
+        try:
+            httpd.serve_forever()
+        except KeyboardInterrupt:
+            print("\nServer shut down!")
 
 
 if __name__ == "__main__":
