@@ -8,9 +8,10 @@ A collection of interesting and helpful links I found on the _World Wide Web_:
 * [Caddy](https://caddyserver.com/) is a modern web server with automatic SSL setup. This website is hosted on it.
 * [suckless.org](https://suckless.org/) has a collection of minimalist software for Unix.
 * [FFmpeg](https://ffmpeg.org/) extremely powerful media processing tool.
-* [nnn](https://github.com/jarun/nnn?tab=readme-ov-file) is a terminal file manager.
+* [nnn](https://github.com/jarun/nnn) is a terminal file manager.
 * [copyparty](https://github.com/9001/copyparty) is a portable file server.
 * [Ghidra](https://github.com/NationalSecurityAgency/ghidra) a powerful reverse engineering tool.
+* [strace](https://en.wikipedia.org/wiki/Strace) is a Linux syscall tracer.
 
 ### Games
 
@@ -36,6 +37,7 @@ A collection of interesting and helpful links I found on the _World Wide Web_:
 * [SDRangel](https://github.com/f4exb/sdrangel) is a very powerful SDR software with a lot of supported modes.
 * [web sdr](http://websdr.ewi.utwente.nl:8901/) is an HF SDR receiver located at the University of Twente in the Netherlands.
 * [tracksat.space](https://tracksat.space/) is nice little site for tracking satellites.
+* [SatDump](https://www.satdump.org/) is a program for decoding a wide range of satellite transmissions.
 
 ### Websites
 

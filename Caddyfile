@@ -1,19 +1,19 @@
-cappig.dev, *.cappig.dev {
-	tls {
-		dns cloudflare {env.CLOUDFLARE_API_TOKEN}
-	}
+cappig.dev, www.cappig.dev {
+    tls {
+        dns cloudflare {env.CLOUDFLARE_API_TOKEN}
+    }
 
-	encode gzip zstd
+    encode gzip zstd
 
-	root * /srv
+    root * /srv
 
-	@root path /
-	rewrite @root /index.html
+    @root path /
+    rewrite @root /index.html
 
     @robots path /robots.txt
     rewrite @robots /static/robots.txt
 
-	try_files {path} {path}.html /404.html
+    try_files {path} {path}.html /404.html
 
-	file_server
+    file_server
 }
