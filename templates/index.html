@@ -27,7 +27,7 @@
 
                 {%- for post in latest_posts %}
                 <a href="/blog/{{ post.slug }}">
-                    <div class="text">{{ post.title }}<span class="date">{{ post.date }}</span></div>
+                    <div class="text" id="post">{{ post.title }}<span class="date">{{ post.date }}</span></div>
                 </a>
                 {%- else %}
                 <p>... its lonely here</p>

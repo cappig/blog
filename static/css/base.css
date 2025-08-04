@@ -4,9 +4,8 @@
     --text-primary: 35, 35, 35;
     --text-secondary: 55, 55, 55;
 
-    --accent-hover: 77, 161, 163;
+    --accent-hover: 43, 166, 168;
     --accent-light: 255, 172, 20;
-
 }
 
 [data-theme="dark"] {
@@ -37,6 +36,7 @@ body {
     width: 100vw;
     margin: auto;
     padding: 2rem 4rem;
+    overflow-x: hidden;
 }
 
 a {

@@ -22,7 +22,10 @@
 
                 {%- for post in posts %}
                 <a href="/blog/{{ post.slug }}">
-                    <div class="text">{{ post.title }}<span class="date">{{ post.date }}</span></div>
+                    <div class="text">
+                        <div id=post>{{ post.title }} <span class="date">{{ post.date }}</span></div>
+                        <div class="description">{{ post.description }}</div>
+                    </div>
                 </a>
                 {%- else %}
                 <p>... its lonely here</p>

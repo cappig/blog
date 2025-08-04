@@ -40,6 +40,10 @@
 .posts .text {
     margin: 0.5rem 0;
     padding: 0.5em 1.5em;
+}
+
+#post {
+    font-weight: 500;
     display: flex;
     justify-content: space-between;
 }
@@ -73,6 +77,14 @@
     font-weight: 200;
 }
 
+.description {
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+    color: rgb(var(--text-secondary));
+    font-weight: 300;
+    font-style: italic;
+}
+
 
 @media (max-width: 1050px) {
     #blurb {
@@ -93,8 +105,16 @@
         margin-top: 2rem;
     }
 
+    #post {
+        font-size: 1rem;
+    }
+
     .date {
         font-size: 0.65rem;
+    }
+
+    .description {
+        font-size: 0.75rem;
     }
 
     .hero {
