@@ -48,12 +48,12 @@
     justify-content: space-between;
 }
 
-.posts a {
+.no_color {
     text-decoration: unset;
     color: unset;
 }
 
-.posts a:hover {
+.no_color:hover {
     text-decoration: unset;
 }
 

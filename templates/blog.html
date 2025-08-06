@@ -17,19 +17,19 @@
             <div class="posts">
                 <div class="blog_hero">
                     <div class="book"></div>
-                    <p>Blog posts:</p>
+                    <p>Cappig's blog posts (<a href="/blog/feed.xml">Atom feed</a>):</p>
                 </div>
 
-                {%- for post in posts %}
-                <a href="/blog/{{ post.slug }}">
+                {% for post in posts %}
+                <a href="/blog/{{ post.slug }}" class="no_color">
                     <div class="text">
-                        <div id=post>{{ post.title }} <span class="date">{{ post.date }}</span></div>
+                        <div id=post>{{ post.title }} <span class="date">{{ strftime('%d/%m/%Y', post.date) }}</span></div>
                         <div class="description">{{ post.description }}</div>
                     </div>
                 </a>
-                {%- else %}
+                {% else %}
                 <p>... its lonely here</p>
-                {%- endfor %}
+                {% endfor %}
             </div>
         </div>
     </main>

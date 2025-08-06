@@ -21,7 +21,10 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
             full_path = os.path.join(os.getcwd(), STATIC_DIR, rel_path)
         else:
             rel_path = path.lstrip("/")
-            full_path = os.path.join(os.getcwd(), SITE_DIR, rel_path) + ".html"
+            full_path = os.path.join(os.getcwd(), SITE_DIR, rel_path)
+
+            if os.path.exists(full_path + ".html"):
+                full_path += ".html"
 
         return full_path
 

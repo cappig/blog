@@ -13,6 +13,9 @@ template_dir = Path("templates")
 output_dir = Path("site")
 
 env = Environment(loader=FileSystemLoader(template_dir))
+env.globals["strftime"] = lambda format, dt: dt.strftime(format)
+
+gen_time = datetime.now(timezone.utc)
 
 
 def slugify(text):
@@ -41,7 +44,7 @@ def get_git_hash():
 
 def write_page(template_name, output_name, context=None):
     template = env.get_template(template_name)
-    rendered = template.render(**(context or {}))
+    rendered = template.render(now=gen_time, **(context or {}))
 
     output_path = output_dir / output_name
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -90,7 +93,6 @@ def generate_about():
     context = {
         "content": about_html,
         "git_hash": get_git_hash(),
-        "build_time": datetime.now(timezone.utc).strftime("%d/%m/%Y %H:%M"),
         **about_post.metadata,
     }
 
@@ -112,9 +114,9 @@ def generate_404():
 
 def generate_post(post):
     article = frontmatter.load(post["filepath"])
-    article_html = render_markdown(article.content)
+    post["content"] = render_markdown(article.content)
 
-    context = {"content": article_html, **article.metadata}
+    context = {"content": post["content"], **article.metadata}
 
     write_page("article.html", f"blog/{post['slug']}.html", context)
 
@@ -122,22 +124,24 @@ def generate_post(post):
 def generate_blog(posts):
     context = {"posts": posts}
     write_page("blog.html", "blog.html", context)
+    write_page("feed.xml", "blog/feed.xml", context)
 
 
 def main():
     os.makedirs(output_dir, exist_ok=True)
     os.makedirs(os.path.join(output_dir, "blog"), exist_ok=True)
 
-    posts = collect_posts()
-
-    generate_blog(posts)
-    generate_index(posts)
     generate_about()
     generate_links()
     generate_404()
 
+    posts = collect_posts()
+
     for post in posts:
         generate_post(post)
+
+    generate_blog(posts)
+    generate_index(posts)
 
     print("~ Site generated! ~")
 

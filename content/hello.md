@@ -1,7 +1,7 @@
 ---
 title: Stupid simple blog
 description: How I generate my simple little website.
-date: 03/08/2025
+date: 2025-08-03
 ---
 
 _Well hello there, welcome to my inaugural blog post!_

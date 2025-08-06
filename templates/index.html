@@ -25,13 +25,13 @@
             <div class="posts">
                 <div class="posts_head">Latest blog posts:</div>
 
-                {%- for post in latest_posts %}
-                <a href="/blog/{{ post.slug }}">
-                    <div class="text" id="post">{{ post.title }}<span class="date">{{ post.date }}</span></div>
+                {% for post in latest_posts %}
+                <a href="/blog/{{ post.slug }}" class="no_color">
+                    <div class="text" id="post">{{ post.title }}<span class="date">{{ strftime('%d/%m/%Y', post.date) }}</span></div>
                 </a>
-                {%- else %}
+                {% else %}
                 <p>... its lonely here</p>
-                {%- endfor %}
+                {% endfor %}
             </div>
         </div>
     </main>

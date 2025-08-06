@@ -15,7 +15,7 @@
     <main>
         <div class="container" id="article">
             <div class="article_title">{{ title }}</div>
-            <div class="article_date">{{ date }}</div>
+            <div class="article_date">{{ strftime('%d/%m/%Y', date) }}</div>
 
             <article>
 {{ content | safe }}

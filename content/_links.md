@@ -46,7 +46,7 @@ A collection of interesting and helpful links I found on the _World Wide Web_:
 * [xkcd](https://xkcd.com/) O-|—<
 * [The Onion](https://theonion.com/) still producing hilarious stuff after some 40 years!
 * [EFF](https://www.eff.org/) is the Electronic Frontier Foundation. They do a lot of good work defending digital rights and privacy.
-* [neocities](https://neocities.org/) is a free modern [geocities](https://en.wikipedia.org/wiki/GeoCitiesa) inspired website host. A lot of cool websites are hosted here!
+* [neocities](https://neocities.org/) is a free modern [geocities](https://en.wikipedia.org/wiki/GeoCities) inspired website host. A lot of cool websites are hosted here!
 * [Decompiler Explorer](https://dogbolt.org/) is an online interface for decompiling binaries with several decompilers.
 * [Compiler Explorer](https://godbolt.org/) online compiler and disassembler.
 * [awesome-selfhosted](https://awesome-selfhosted.net/) is an extensive list of software that can be self-hosted.
@@ -56,6 +56,7 @@ A collection of interesting and helpful links I found on the _World Wide Web_:
 * [factordb](https://factordb.com/) is an online integer factorisation database.
 * [GIMPS](https://www.mersenne.org/) the great internet [Mersenne prime](https://en.wikipedia.org/wiki/Mersenne_prime) search.
 * [LKML](https://lkml.org/) Linux kernel mailing list archive.
+* [Stanford Encyclopedia of Philosophy](https://plato.stanford.edu/) is a very well written online philosophy encyclopedia.
 
 ### Blogs
 
