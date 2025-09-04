@@ -23,13 +23,18 @@
 }
 
 
+code {
+    font-family: monospace;
+}
+
 .highlight pre {
     background: rgba(var(--bg-secondary), 0.2);
     color: var(--code-default);
-    margin: 1.5rem 0;
+    margin: 1.8rem 0;
     padding: 1em 1.5em;
     overflow: auto;
-    line-height: 110%;
+    line-height: 135%;
+    font-weight: 400;
 }
 
 /* Comments */

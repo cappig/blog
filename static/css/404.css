@@ -5,6 +5,11 @@
     min-height: 50vh;
 }
 
+.four_container {
+    display: flex;
+    flex-direction: column;
+}
+
 .four_oh_four {
     font-family: 'UnifrakturCook', serif;
     font-size: 8rem;
@@ -14,15 +19,9 @@
 }
 
 .four_text {
-    align-self: center;
     text-align: center;
+    align-self: center;
 }
-
-.four_container {
-    display: flex;
-    flex-direction: column;
-}
-
 
 @media (max-width: 800px) {
     .four_oh_four {

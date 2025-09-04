@@ -3,7 +3,6 @@
     --bg-secondary: 235, 235, 215;
     --text-primary: 35, 35, 35;
     --text-secondary: 55, 55, 55;
-
     --accent-hover: 43, 166, 168;
     --accent-light: 255, 172, 20;
 }
@@ -14,7 +13,6 @@
     --text-primary: 255, 255, 248;
     --text-secondary: 235, 235, 215;
 }
-
 
 * {
     margin: 0;
@@ -27,9 +25,8 @@
     background-color: rgba(var(--accent-hover), 0.5);
 }
 
-
 body {
-    background-color: rgb(var(--bg-primary));
+    background: rgb(var(--bg-primary));
     color: rgb(var(--text-primary));
     min-height: 100vh;
     max-width: 2300px;
@@ -40,15 +37,14 @@ body {
 }
 
 a {
-    font-size: inherit;
     color: inherit;
-    text-decoration: unset;
+    text-decoration: none;
 }
 
 main a {
-    text-decoration: 0.1em underline dotted;
-    text-underline-offset: 0.1rem;
     color: rgb(var(--accent-hover));
+    text-decoration: underline dotted 0.1em;
+    text-underline-offset: 0.1rem;
 }
 
 main a:hover {
@@ -56,7 +52,6 @@ main a:hover {
 }
 
 abbr {
-    font-size: inherit;
     cursor: help;
 }
 
@@ -64,13 +59,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    flex-wrap: nowrap;
     padding: 2rem;
     gap: 1rem;
-}
-
-header a {
-    color: unset;
 }
 
 header a:hover {
@@ -83,26 +73,24 @@ header a:hover {
     font-size: 6.5rem;
     font-weight: 700;
     margin-left: 0.8em;
-    text-decoration: none;
     white-space: nowrap;
 }
 
-.title::before {
+.title::before,
+.title::after {
     font-family: 'Noto Sans Egyptian Hieroglyphs';
-    content: "𓆑";
     position: absolute;
     width: 0;
-    height: auto;
+}
+
+.title::before {
+    content: "𓆑";
     right: 5.8em;
     bottom: -0.3em;
 }
 
 .title::after {
-    font-family: 'Noto Sans Egyptian Hieroglyphs';
     content: "𓆓";
-    position: absolute;
-    width: 0;
-    height: auto;
     left: 4.4em;
     top: -0.25em;
 }
@@ -114,8 +102,8 @@ header a:hover {
 
 nav {
     display: flex;
-    font-size: 1.87rem;
     gap: 0.5rem;
+    font-size: 1.87rem;
     letter-spacing: 0.01rem;
     font-family: 'IBM Plex Mono', monospace;
 }
@@ -125,42 +113,36 @@ nav * {
 }
 
 main {
+    margin: 3rem 10% 0;
     padding: 2rem;
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Fira Code';
     font-size: 1.7rem;
     line-height: 2.55rem;
+    font-weight: 350;
     letter-spacing: 0.01rem;
-    margin-top: 3rem;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 
 .line {
     width: 100%;
     height: 20px;
     mask-image: url('/static/img/line.svg');
-    background-color: rgb(var(--text-primary));
-    background-repeat: repeat-x;
+    background: rgb(var(--text-primary)) repeat-x;
 }
 
 .container {
-    line-height: 2.55rem;
     font-size: 1.7rem;
+    line-height: 2.55rem;
 }
-
 
 .text {
     background: rgba(var(--bg-secondary), 0.2);
     color: rgb(var(--text-primary));
-    text-align: left;
     margin: 1rem 0;
     padding: 1em 1.5em;
 }
 
-
 .theme {
     cursor: pointer;
-    font-size: unset;
     border: none;
     background: rgba(var(--bg-secondary), 0.4);
     position: fixed;
@@ -175,18 +157,14 @@ main {
 }
 
 .theme_icon {
-    mask-image: url('/static/img/luna.svg');
-    mask-repeat: no-repeat;
-    mask-position: center;
+    mask: url('/static/img/luna.svg') no-repeat center/contain;
     aspect-ratio: 1/1;
     width: 100%;
     height: 70%;
-    mask-size: contain;
     vertical-align: middle;
     display: inline-block;
-    background-color: rgb(var(--text-primary));
+    background: rgb(var(--text-primary));
 }
-
 
 @media (max-width: 1500px) {
     header {
@@ -201,9 +179,7 @@ main {
     }
 
     main {
-        margin: 5%;
-        margin-top: 2.5rem;
-        margin-bottom: 20%;
+        margin: 2.5rem 5% 20%;
         padding: 0;
     }
 
@@ -218,8 +194,8 @@ main {
     }
 
     .container {
-        line-height: 1.8rem;
         font-size: 1.4rem;
+        line-height: 1.8rem;
     }
 
     .text {
@@ -241,7 +217,6 @@ main {
 
     nav {
         font-size: 1rem;
-
     }
 
     header {
@@ -253,14 +228,14 @@ main {
     }
 
     .container {
-        line-height: 1.6rem;
         font-size: 1.4rem;
+        line-height: 1.6rem;
     }
 }
 
 @media (max-width: 420px) {
     .container {
-        line-height: 1.2rem;
         font-size: 0.8rem;
+        line-height: 1.2rem;
     }
 }

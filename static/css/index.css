@@ -3,21 +3,17 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    font-style: italic;
-    margin: 3rem 0;
     text-align: center;
+    margin: 3rem 0;
 }
 
 .headpiece {
     width: 100%;
     max-height: 22rem;
     aspect-ratio: 16/5;
-    mask-image: url('/static/img/headpice.svg');
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
     display: inline-block;
     background-color: rgba(var(--text-primary), 1);
+    mask: url('/static/img/headpice.svg') no-repeat center/contain;
 }
 
 #index {
@@ -42,21 +38,6 @@
     padding: 0.5em 1.5em;
 }
 
-#post {
-    font-weight: 500;
-    display: flex;
-    justify-content: space-between;
-}
-
-.no_color {
-    text-decoration: unset;
-    color: unset;
-}
-
-.no_color:hover {
-    text-decoration: unset;
-}
-
 .posts .text:hover {
     background-color: rgba(var(--accent-hover), 0.25);
 }
@@ -65,34 +46,42 @@
     margin-bottom: 2rem;
 }
 
+#post {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.no_color {
+    text-decoration: none;
+    color: inherit;
+}
+
+.no_color:hover {
+    text-decoration: none;
+}
+
 .posts_head {
-    padding-left: 2rem;
-    padding-bottom: 2rem;
+    padding: 0 0 2rem 2rem;
     font-weight: 500;
 }
 
 .date {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: rgb(var(--text-secondary));
     font-weight: 200;
 }
 
 .description {
-    margin-top: 0.5rem;
+    margin-top: 0.3rem;
     font-size: 1.5rem;
     color: rgb(var(--text-secondary));
     font-weight: 300;
-    font-style: italic;
 }
-
 
 @media (max-width: 1050px) {
     #blurb {
         margin-top: 1rem;
-    }
-
-    #index {
-        width: 90%;
     }
 
     .hero {
@@ -101,6 +90,10 @@
 }
 
 @media (max-width: 800px) {
+    .hero {
+        margin: 1rem 0;
+    }
+
     .posts {
         margin-top: 2rem;
     }
@@ -115,10 +108,6 @@
 
     .description {
         font-size: 0.75rem;
-    }
-
-    .hero {
-        margin: 1rem 0;
     }
 
     .posts_head {
