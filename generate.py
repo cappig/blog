@@ -1,3 +1,4 @@
+import hashlib
 import frontmatter
 import markdown
 import re
@@ -42,9 +43,26 @@ def get_git_hash():
     )
 
 
+def get_file_hash(path):
+    hasher = hashlib.sha256()
+
+    with open(path, "rb") as f:
+        while chunk := f.read(8192):
+            hasher.update(chunk)
+
+    return hasher.hexdigest()[:8]
+
+
 def write_page(template_name, output_name, context=None):
     template = env.get_template(template_name)
-    rendered = template.render(now=gen_time, **(context or {}))
+
+    version = {
+        "css_hash": get_file_hash("static/css/style.css"),
+        "code_css_hash": get_file_hash("static/css/code.css"),
+        "js_hash": get_file_hash("static/js/theme.js"),
+    }
+
+    rendered = template.render(now=gen_time, **version, **(context or {}))
 
     output_path = output_dir / output_name
     output_path.parent.mkdir(parents=True, exist_ok=True)

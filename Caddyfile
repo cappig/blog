@@ -18,10 +18,20 @@ cappig.dev, www.cappig.dev {
     }
     header @fonts Cache-Control "public, max-age=31536000, immutable"
 
-    @css {
-        path *.css
+    @static {
+        path *.css *.js
     }
-    header @css Cache-Control "private, max-age=86400, stale-while-revalidate=604800"
+    header @static Cache-Control "public, max-age=31536000"
+
+    @svg {
+        path *.svg *.ico
+    }
+    header @svg Cache-Control "public, max-age=15552000"
+
+    @images {
+        path *.jpg *.png *.webp
+    }
+    header @images Cache-Control "public, max-age=2592000"
 
     try_files {path} {path}.html /404.html
 

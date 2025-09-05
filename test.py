@@ -14,10 +14,12 @@ class ReusableTCPServer(socketserver.TCPServer):
 
 class CustomHandler(http.server.SimpleHTTPRequestHandler):
     def translate_path(self, path):
+        path = path.split("?")[0]
+
         if path == "/":
             full_path = os.path.join(os.getcwd(), SITE_DIR, "index.html")
         elif path.startswith("/static/"):
-            rel_path = path[len("/static/"):]
+            rel_path = path[len("/static/") :]
             full_path = os.path.join(os.getcwd(), STATIC_DIR, rel_path)
         else:
             rel_path = path.lstrip("/")
