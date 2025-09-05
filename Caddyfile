@@ -13,6 +13,16 @@ cappig.dev, www.cappig.dev {
     @robots path /robots.txt
     rewrite @robots /static/robots.txt
 
+    @fonts {
+        path *.woff2 *.ttf
+    }
+    header @fonts Cache-Control "public, max-age=31536000, immutable"
+
+    @css {
+        path *.css
+    }
+    header @css Cache-Control "private, max-age=86400, stale-while-revalidate=604800"
+
     try_files {path} {path}.html /404.html
 
     file_server

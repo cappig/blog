@@ -1,0 +1,499 @@
+:root {
+    --bg-primary: 255, 255, 248;
+    --bg-secondary: 235, 235, 215;
+    --text-primary: 35, 35, 35;
+    --text-secondary: 55, 55, 55;
+    --accent-hover: 43, 166, 168;
+    --accent-light: 255, 172, 20;
+}
+
+[data-theme="dark"] {
+    --bg-primary: 35, 35, 35;
+    --bg-secondary: 55, 55, 55;
+    --text-primary: 255, 255, 248;
+    --text-secondary: 235, 235, 215;
+}
+
+
+@font-face {
+    font-display: swap;
+    font-family: 'UnifrakturCook';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/static/fonts/unifrakturcook-v24-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Noto Sans Egyptian Hieroglyphs';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/static/fonts/noto-sans-egyptian-hieroglyphs-v29-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Fira Code';
+    font-style: normal;
+    src: url('/static/fonts/FiraCode-VariableFont_wght.ttf') format('truetype');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-color: rgb(var(--bg-secondary)) rgba(var(--bg-secondary), .1);
+}
+
+::selection {
+    background-color: rgba(var(--accent-hover), .5);
+}
+
+
+body {
+    background: rgb(var(--bg-primary));
+    color: rgb(var(--text-primary));
+    min-height: 100vh;
+    max-width: 2300px;
+    width: 100vw;
+    margin: auto;
+    padding: 2rem 4rem;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+main a {
+    color: rgb(var(--accent-hover));
+    text-decoration: underline dotted .1em;
+    text-underline-offset: .1rem;
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+abbr {
+    cursor: help;
+}
+
+ul {
+    padding-left: 1.5em;
+}
+
+p {
+    margin: .5rem 0;
+}
+
+h3 {
+    margin: 3rem 0 1.5rem;
+    font-weight: 600;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+header a:hover {
+    color: rgb(var(--accent-hover));
+}
+
+.title {
+    position: relative;
+    font-family: 'UnifrakturCook', serif;
+    font-size: 6.5rem;
+    font-weight: 700;
+    margin-left: .8em;
+    white-space: nowrap;
+}
+
+.title::before,
+.title::after {
+    font-family: 'Noto Sans Egyptian Hieroglyphs';
+    position: absolute;
+    width: 0;
+}
+
+.title::before {
+    content: "𓆑";
+    right: 5.8em;
+    bottom: -.3em;
+}
+
+.title::after {
+    content: "𓆓";
+    left: 4.4em;
+    top: -.25em;
+}
+
+.title:hover::before,
+.title:hover::after {
+    color: rgb(var(--accent-light));
+}
+
+nav {
+    display: flex;
+    gap: .5rem;
+    font-size: 1.87rem;
+    letter-spacing: .01rem;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+nav * {
+    padding: 1rem;
+}
+
+
+main {
+    margin: 3rem 10% 0;
+    padding: 2rem;
+    font-family: 'Fira Code';
+    font-size: 1.7rem;
+    line-height: 2.55rem;
+    font-weight: 350;
+    letter-spacing: .01rem;
+}
+
+main article {
+    padding-top: 1.5rem;
+}
+
+#article {
+    width: 95%;
+    margin: auto;
+}
+
+.article_title {
+    font-size: 3.5rem;
+    padding: 2rem 0 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+}
+
+.article_date {
+    font-size: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+
+.line {
+    width: 100%;
+    height: 20px;
+    mask-image: url('/static/img/line.svg');
+    background: rgb(var(--text-primary)) repeat-x;
+}
+
+.container {
+    font-size: 1.7rem;
+    line-height: 2.55rem;
+}
+
+.text {
+    background: rgba(var(--bg-secondary), .2);
+    color: rgb(var(--text-primary));
+    margin: 1rem 0;
+    padding: 1em 1.5em;
+}
+
+.theme {
+    cursor: pointer;
+    border: none;
+    background: rgba(var(--bg-secondary), .4);
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+}
+
+.theme:hover {
+    background: rgb(var(--bg-secondary));
+}
+
+.theme_icon {
+    mask: url('/static/img/luna.svg') no-repeat center/contain;
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: 70%;
+    vertical-align: middle;
+    display: inline-block;
+    background: rgb(var(--text-primary));
+}
+
+
+.blog_hero,
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.blog_hero {
+    font-style: italic;
+    margin-bottom: 5rem;
+}
+
+.hero {
+    margin: 3rem 0;
+}
+
+.book,
+.bookshelf,
+.headpiece {
+    width: 100%;
+    display: inline-block;
+    background-color: rgba(var(--text-primary), 1);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.book {
+    max-height: 10rem;
+    aspect-ratio: 5/1;
+    mask-image: url('/static/img/book.svg');
+}
+
+.bookshelf {
+    max-height: 10rem;
+    aspect-ratio: 5/1;
+    mask-image: url('/static/img/bookshelf.svg');
+    margin-top: 5rem;
+}
+
+.headpiece {
+    max-height: 22rem;
+    aspect-ratio: 16/5;
+    mask: url('/static/img/headpice.svg') no-repeat center/contain;
+}
+
+#index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 90%;
+    margin: auto;
+}
+
+#index>div {
+    width: 100%;
+}
+
+.posts {
+    margin-top: 4rem;
+}
+
+.posts .text {
+    margin: .5rem 0;
+    padding: .5em 1.5em;
+}
+
+.posts .text:hover {
+    background-color: rgba(var(--accent-hover), .25);
+}
+
+.posts .text:last-child {
+    margin-bottom: 2rem;
+}
+
+#post {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.posts_head {
+    padding: 0 0 2rem 2rem;
+    font-weight: 500;
+}
+
+.no_color,
+.no_color:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.date {
+    font-size: 1.4rem;
+    color: rgb(var(--text-secondary));
+    font-weight: 200;
+}
+
+.description {
+    margin-top: .3rem;
+    font-size: 1.5rem;
+    color: rgb(var(--text-secondary));
+    font-weight: 300;
+}
+
+
+#not_found {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.four_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.four_oh_four {
+    font-family: 'UnifrakturCook', serif;
+    font-size: 8rem;
+    font-weight: 700;
+    padding-bottom: 4rem;
+    align-self: center;
+}
+
+.four_text {
+    text-align: center;
+    align-self: center;
+}
+
+
+@media (max-width:1500px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    main {
+        margin: 2.5rem 5% 20%;
+        padding: 0;
+    }
+
+    .title {
+        margin-left: 0;
+    }
+
+    .article_title {
+        font-size: 2.3rem;
+    }
+
+    .article_date {
+        font-size: 1.3rem;
+        padding-bottom: 1.5rem;
+    }
+}
+
+@media (max-width:1050px) {
+    body {
+        padding: 0;
+    }
+
+    .container {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+    }
+
+    .text {
+        margin: 0;
+    }
+
+    .theme {
+        width: 3rem;
+        height: 3rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .article_title {
+        font-size: 2rem;
+    }
+
+    .article_date {
+        font-size: 1rem;
+        padding-bottom: 1.5rem;
+    }
+
+    #blurb {
+        margin-top: 1rem;
+    }
+
+    .hero {
+        margin: 2rem 0;
+    }
+}
+
+@media (max-width:800px) {
+    .title {
+        font-size: 3rem;
+    }
+
+    nav {
+        font-size: 1rem;
+    }
+
+    header {
+        padding: 1.4rem;
+    }
+
+    .date {
+        font-size: .65rem;
+    }
+
+    .container {
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+    }
+
+    .article_title {
+        font-size: 1.8rem;
+        padding: 1rem 0 1.5rem;
+    }
+
+    .article_date {
+        font-size: 1rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .blog_hero {
+        margin-bottom: 3rem;
+    }
+
+    .hero {
+        margin: 1rem 0;
+    }
+
+    .posts {
+        margin-top: 2rem;
+    }
+
+    #post {
+        font-size: 1rem;
+    }
+
+    .description {
+        font-size: .75rem;
+    }
+
+    .posts_head {
+        padding-bottom: 1rem;
+    }
+}
+
+@media (max-width:420px) {
+    .container {
+        font-size: .8rem;
+        line-height: 1.2rem;
+    }
+}
