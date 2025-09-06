@@ -20,21 +20,21 @@
     font-family: 'UnifrakturCook';
     font-style: normal;
     font-weight: 700;
-    src: url('/static/fonts/unifrakturcook-v24-latin-700.woff2') format('woff2');
+    src: url('/static/fonts/unifrakturcook-v24.woff2') format('woff2');
 }
 
 @font-face {
     font-display: swap;
-    font-family: 'Noto Sans Egyptian Hieroglyphs';
+    font-family: 'UnifrakturCook';
     font-style: normal;
     font-weight: 400;
-    src: url('/static/fonts/noto-sans-egyptian-hieroglyphs-v29-latin-regular.woff2') format('woff2');
+    src: url('/static/fonts/noto-sans-hieroglyphs-v29.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Fira Code';
     font-style: normal;
-    src: url('/static/fonts/FiraCode-VariableFont_wght.ttf') format('truetype');
+    src: url('/static/fonts/FiraCode_v6.2.woff2') format('woff2');
 }
 
 
@@ -42,11 +42,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scrollbar-color: rgb(var(--bg-secondary)) rgba(var(--bg-secondary), .1);
+    scrollbar-color: rgb(var(--bg-secondary)) rgba(var(--bg-secondary), 0.1);
 }
 
 ::selection {
-    background-color: rgba(var(--accent-hover), .5);
+    background-color: rgba(var(--accent-hover), 0.5);
 }
 
 
@@ -68,8 +68,8 @@ a {
 
 main a {
     color: rgb(var(--accent-hover));
-    text-decoration: underline dotted .1em;
-    text-underline-offset: .1rem;
+    text-decoration: underline dotted 0.1em;
+    text-underline-offset: 0.1rem;
 }
 
 main a:hover {
@@ -85,7 +85,7 @@ ul {
 }
 
 p {
-    margin: .5rem 0;
+    margin: 0.5rem 0;
 }
 
 h3 {
@@ -111,7 +111,7 @@ header a:hover {
     font-family: 'UnifrakturCook', serif;
     font-size: 6.5rem;
     font-weight: 700;
-    margin-left: .8em;
+    margin-left: 0.8em;
     white-space: nowrap;
 }
 
@@ -125,13 +125,13 @@ header a:hover {
 .title::before {
     content: "𓆑";
     right: 5.8em;
-    bottom: -.3em;
+    bottom: -0.3em;
 }
 
 .title::after {
     content: "𓆓";
     left: 4.4em;
-    top: -.25em;
+    top: -0.25em;
 }
 
 .title:hover::before,
@@ -141,25 +141,19 @@ header a:hover {
 
 nav {
     display: flex;
-    gap: .5rem;
-    font-size: 1.87rem;
-    letter-spacing: .01rem;
-    font-family: 'IBM Plex Mono', monospace;
+    gap: 0.5rem;
+    font: normal 1.87rem 'Fira Code';
 }
 
 nav * {
     padding: 1rem;
 }
 
-
 main {
     margin: 3rem 10% 0;
     padding: 2rem;
-    font-family: 'Fira Code';
-    font-size: 1.7rem;
-    line-height: 2.55rem;
-    font-weight: 350;
-    letter-spacing: .01rem;
+    font: 350 1.7rem/2.55rem 'Fira Code';
+    letter-spacing: -0.02rem;
 }
 
 main article {
@@ -183,7 +177,6 @@ main article {
     padding-bottom: 2rem;
 }
 
-
 .line {
     width: 100%;
     height: 20px;
@@ -197,7 +190,7 @@ main article {
 }
 
 .text {
-    background: rgba(var(--bg-secondary), .2);
+    background: rgba(var(--bg-secondary), 0.2);
     color: rgb(var(--text-primary));
     margin: 1rem 0;
     padding: 1em 1.5em;
@@ -206,7 +199,7 @@ main article {
 .theme {
     cursor: pointer;
     border: none;
-    background: rgba(var(--bg-secondary), .4);
+    background: rgba(var(--bg-secondary), 0.4);
     position: fixed;
     bottom: 2rem;
     right: 2rem;
@@ -228,7 +221,6 @@ main article {
     background: rgb(var(--text-primary));
 }
 
-
 .blog_hero,
 .hero {
     display: flex;
@@ -245,36 +237,33 @@ main article {
 
 .hero {
     margin: 3rem 0;
-}
-
-.book,
-.bookshelf,
-.headpiece {
-    width: 100%;
-    display: inline-block;
-    background-color: rgba(var(--text-primary), 1);
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
+    justify-content: center;
 }
 
 .book {
+    width: 100%;
     max-height: 10rem;
     aspect-ratio: 5/1;
-    mask-image: url('/static/img/book.svg');
+    mask: url('/static/img/book.svg') no-repeat center/contain;
+    background-color: rgb(var(--text-primary));
 }
 
 .bookshelf {
+    width: 100%;
     max-height: 10rem;
     aspect-ratio: 5/1;
-    mask-image: url('/static/img/bookshelf.svg');
+    mask: url('/static/img/bookshelf.svg') no-repeat center/contain;
+    display: inline-block;
+    background-color: rgb(var(--text-primary));
     margin-top: 5rem;
 }
 
 .headpiece {
+    width: 100%;
     max-height: 22rem;
     aspect-ratio: 16/5;
     mask: url('/static/img/headpice.svg') no-repeat center/contain;
+    background-color: rgb(var(--text-primary));
 }
 
 #index {
@@ -295,12 +284,12 @@ main article {
 }
 
 .posts .text {
-    margin: .5rem 0;
-    padding: .5em 1.5em;
+    margin: 0.5rem 0;
+    padding: 0.5em 1.5em;
 }
 
 .posts .text:hover {
-    background-color: rgba(var(--accent-hover), .25);
+    background-color: rgba(var(--accent-hover), 0.25);
 }
 
 .posts .text:last-child {
@@ -324,42 +313,33 @@ main article {
     color: inherit;
 }
 
+.date,
+.description {
+    color: rgb(var(--text-secondary));
+}
+
 .date {
     font-size: 1.4rem;
-    color: rgb(var(--text-secondary));
     font-weight: 200;
 }
 
 .description {
-    margin-top: .3rem;
+    margin-top: 0.3rem;
     font-size: 1.5rem;
-    color: rgb(var(--text-secondary));
     font-weight: 300;
 }
 
 
-#not_found {
-    display: flex;
+.not_found {
+    min-height: 60vh;
     justify-content: center;
-    align-items: center;
-    min-height: 50vh;
 }
 
-.four_container {
-    display: flex;
-    flex-direction: column;
-}
-
-.four_oh_four {
+.text_404 {
     font-family: 'UnifrakturCook', serif;
-    font-size: 8rem;
+    font-size: 6em;
     font-weight: 700;
-    padding-bottom: 4rem;
-    align-self: center;
-}
-
-.four_text {
-    text-align: center;
+    padding-bottom: 3rem;
     align-self: center;
 }
 
@@ -448,7 +428,7 @@ main article {
     }
 
     .date {
-        font-size: .65rem;
+        font-size: 0.65rem;
     }
 
     .container {
@@ -483,7 +463,7 @@ main article {
     }
 
     .description {
-        font-size: .75rem;
+        font-size: 0.75rem;
     }
 
     .posts_head {
@@ -493,7 +473,7 @@ main article {
 
 @media (max-width:420px) {
     .container {
-        font-size: .8rem;
+        font-size: 0.8rem;
         line-height: 1.2rem;
     }
 }
