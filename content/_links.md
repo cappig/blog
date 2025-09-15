@@ -5,7 +5,7 @@ A collection of interesting and helpful links I found on the _World Wide Web_:
 * [sagemath](https://www.sagemath.org/) is a nice Python math package.
 * [flint](https://flintlib.org/) is C number theory library.
 * [neovim](https://neovim.io/) is a rich Vim based text editor that I personally use.
-* [Caddy](https://caddyserver.com/) is a modern web server with automatic SSL setup. This website is hosted on it.
+* [Caddy](https://caddyserver.com/) is a modern web server with automatic SSL. This website is hosted on it.
 * [suckless.org](https://suckless.org/) has a collection of minimalist software for Unix.
 * [FFmpeg](https://ffmpeg.org/) extremely powerful media processing tool.
 * [nnn](https://github.com/jarun/nnn) is a terminal file manager.
@@ -63,12 +63,10 @@ A collection of interesting and helpful links I found on the _World Wide Web_:
 * [nullprogram](https://nullprogram.com/) is Chris Wellons's incredible programming blog.
 * [thephd](https://thephd.dev/) is JeanHeyd Meneide's blog about C/C++ stuff.
 * [Jacopo's Lair](https://a-centauri.com/) has some useful articles about radio and weather satellites.
-
 * [Shtetl-Optimized](https://scottaaronson.blog/) is Scott Aaronson's amazing blog, mainly about computer science.
 * [Astral Codex Ten](https://substack.com/@astralcodexten) and [Slate Star Codex](https://slatestarcodex.com/) are Scott Alexander's new and old blogs. Very well written posts about a range of topics.
 * [Numb at the Lodge](https://substack.com/@samkriss) is extremely well written, covers interesting topics -- mostly philosophy related. Sam Kriss is hands down one of the best writers on the internet.
 * [Noahpinion](https://www.noahpinion.blog/) is Noah Smith's econ blog.
-
 * [LOW←TECH MAGAZINE](https://solar.lowtechmagazine.com/) solar powered website.
 
 <br>

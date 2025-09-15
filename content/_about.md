@@ -1,8 +1,4 @@
-Hello I'm Matej, I go by Cappig online. I'm a programmer and I make random stuff sometimes.
-
-I like C, python, osdev/low level programming, playing Doom, philosophy and chilling ^_^.
-
-Currently I'm a computer science undergrad at the [University of Zagreb](https://www.fer.unizg.hr/en/studies/bachelor/computing).
+Hello I'm Matej, I go by Cappig online. I'm a programmer and I make random stuff sometimes. I like C, python, osdev/low level programming, playing Doom, philosophy and chilling ^_^. Currently I'm a computer science undergrad at the [University of Zagreb](https://www.fer.unizg.hr/en/studies/bachelor/computing).
 
 This is my personal 'blog' and project repository. I might post some more stuff on here in the near future.
 

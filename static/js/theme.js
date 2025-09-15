@@ -1,4 +1,4 @@
-const saved_theme = localStorage.getItem('theme');
+let saved_theme = localStorage.getItem('theme');
 
 if (saved_theme) {
     document.documentElement.setAttribute('data-theme', saved_theme);

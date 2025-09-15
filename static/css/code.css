@@ -29,7 +29,8 @@ code {
 }
 
 .highlight pre {
-    background: rgba(var(--bg-secondary), 0.2);
+    background: rgba(var(--bg-secondary), 0.3);
+    border: 1px solid rgba(var(--bg-secondary), 1);
     color: var(--code-default);
     margin: 1.8rem 0;
     padding: 1em 1.5em;
