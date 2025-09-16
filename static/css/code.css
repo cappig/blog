@@ -1,7 +1,7 @@
 :root {
     --code-pink: #e14775;
     --code-orange: #f07c41;
-    --code-yellow: #e3b902;
+    --code-yellow: #d2ac02;
     --code-green: #4caf50;
     --code-blue: #0097a7;
     --code-purple: #9c27b0;
@@ -109,4 +109,10 @@ code {
 .highlight .nf,
 .highlight .fm {
     font-weight: bold;
+}
+
+/* Operators */
+.highlight .o,
+.highlight .ow {
+    color: var(--code-purple);
 }

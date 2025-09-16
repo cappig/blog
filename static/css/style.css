@@ -3,7 +3,7 @@
     --bg-secondary: 238, 238, 215;
     --text-primary: 35, 35, 35;
     --text-secondary: 55, 55, 55;
-    --accent-hover: 43, 166, 168;
+    --accent-hover: 35, 135, 137;
     --accent-light: 255, 172, 20;
 }
 
@@ -12,6 +12,7 @@
     --bg-secondary: 55, 55, 55;
     --text-primary: 255, 255, 248;
     --text-secondary: 235, 235, 215;
+    --accent-hover: 45, 175, 180;
 }
 
 
@@ -232,7 +233,6 @@ main article {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* gap: 1rem; */
     text-align: center;
 }
 
@@ -314,8 +314,9 @@ main article {
 }
 
 .posts_head {
-    padding: 0 0 2rem 2rem;
-    font-weight: 500;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+    font-style: italic;
 }
 
 .no_color,
@@ -423,7 +424,7 @@ main article {
 
 @media (max-width:800px) {
     .title {
-        font-size: 3rem;
+        font-size: 4rem;
     }
 
     .line {
@@ -448,7 +449,7 @@ main article {
 
     .container {
         font-size: 1.4rem;
-        line-height: 1.6rem;
+        line-height: 1.8rem;
     }
 
     .article_title {
@@ -487,6 +488,10 @@ main article {
 }
 
 @media (max-width:420px) {
+    .title {
+        font-size: 3rem;
+    }
+
     .container {
         font-size: 0.9rem;
         line-height: 1.3rem;
