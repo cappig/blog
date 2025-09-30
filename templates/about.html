@@ -18,7 +18,7 @@
 {{ content | safe }}
             </article>
 
-            <div class="text" style="margin-top: 4rem;">
+            <div class="text_box" style="margin-top: 4rem;">
                 Site built on: <i>{{ strftime('%d/%m/%Y %H:%M:%S', now) }} UTC</i> (commit <a target="_blank" href="https://github.com/cappig/blog/commit/{{ git_hash }}"><i>{{ git_hash }}</i></a>)
             </div>
         </div>

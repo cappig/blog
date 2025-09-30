@@ -20,7 +20,7 @@
 
                 {% for post in posts %}
                 <a href="/blog/{{ post.slug }}" class="no_color">
-                    <div class="text">
+                    <div class="text_box">
                         <div id=post>{{ post.title }} <span class="date">{{ strftime('%d/%m/%Y', post.date) }}</span></div>
                         <div class="description">{{ post.description }}</div>
                     </div>

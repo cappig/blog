@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="750" height="480" version="1.1" viewBox="0 0 55 28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<defs>
+		<marker id="n" overflow="visible" orient="auto">
+			<path transform="scale(.4)" d="m5.77 0-8.65 5v-10z" stroke="#000"/>
+		</marker>
+	</defs>
+	<g>
+		<g id="i">
+			<g id="j">
+				<g id="d">
+					<g id="k">
+						<g id="l">
+							<g id="m">
+								<path id="h" d="m7 1h2v2h-2z" fill="#cff" stroke="#000" stroke-width=".06"/>
+								<use transform="translate(2)" xlink:href="#h"/>
+							</g>
+							<use transform="translate(4)" xlink:href="#m"/>
+						</g>
+						<use transform="translate(0,2)" xlink:href="#l"/>
+					</g>
+					<use transform="translate(0,4)" xlink:href="#k"/>
+					<path d="m7 9 8-8" fill="#cff" stroke="#000" stroke-dasharray="0.528, 0.208" stroke-width=".08"/>
+				</g>
+				<use transform="translate(11)" xlink:href="#d"/>
+			</g>
+			<use transform="translate(22)" xlink:href="#j"/>
+		</g>
+		<use transform="translate(0,18)" xlink:href="#i"/>
+		<g id="g">
+			<use transform="translate(-6,9)" xlink:href="#d"/>
+			<use transform="translate(3,9)" xlink:href="#d"/>
+		</g>
+		<use transform="translate(18)" xlink:href="#g"/>
+		<use transform="translate(36)" xlink:href="#g"/>
+	</g>
+	<path id="a" d="m24 7h2v2h-2z" fill="#fc9" stroke="#000" stroke-width=".06"/>
+	<use transform="translate(18,18)" xlink:href="#a"/>
+	<g id="b">
+		<use transform="translate(11)" xlink:href="#a"/>
+		<use transform="translate(11,-2)" xlink:href="#a"/>
+	</g>
+	<use transform="rotate(-90,41.5,2.5)" xlink:href="#b"/>
+	<use transform="rotate(-90,44.5,8.5)" xlink:href="#b"/>
+	<use transform="rotate(-90,43.5,7.5)" xlink:href="#b"/>
+	<g id="c">
+		<use transform="rotate(-90,26.5,26.5)" xlink:href="#b"/>
+		<use transform="translate(-21,9)" xlink:href="#a"/>
+	</g>
+	<use transform="rotate(90,17,26)" xlink:href="#c"/>
+	<g id="f">
+		<use transform="translate(27)" xlink:href="#c"/>
+		<use transform="translate(10,7)" xlink:href="#a"/>
+	</g>
+	<use transform="matrix(0,1,1,0,36,-18)" xlink:href="#f"/>
+	<use transform="translate(-10,9)" xlink:href="#a"/>
+	<use transform="translate(-19,9)" xlink:href="#b"/>
+	<use transform="translate(-10,9)" xlink:href="#f"/>
+	<use transform="translate(0,14)" xlink:href="#a"/>
+	<g id="e">
+		<use transform="rotate(-90,44,16)" xlink:href="#b"/>
+		<use transform="translate(28,9)" xlink:href="#c"/>
+	</g>
+	<use transform="matrix(0,1,1,0,-12,-10)" xlink:href="#e"/>
+	<use transform="matrix(0,1,1,0,21,-10)" xlink:href="#e"/>
+	<g stroke="#000" stroke-width=".16" marker-end="url(#n)" marker-mid="url(#n)">
+		<path d="m7 9h2 2 2 2"/>
+		<path d="m15 9v-2-2-2-2"/>
+		<path d="m18 9h2 2 2"/>
+		<path d="m24 9v-2"/>
+		<path d="m24 7h2"/>
+		<path d="m26 7v-2-2-2"/>
+		<path d="m29 9h2 2 2"/>
+		<path d="m35 9v-2-2"/>
+		<path d="m35 5h2"/>
+		<path d="m37 5v-2-2"/>
+		<path d="m40 9h2 2"/>
+		<path d="m44 7h2 2"/>
+		<path d="m44 9v-2"/>
+		<path d="m48 7v-2-2-2"/>
+		<path d="m1 18h2"/>
+		<path d="m3 16h2 2 2"/>
+		<path d="m3 18v-2"/>
+		<path d="m9 16v-2-2-2"/>
+		<path d="m10 18h2 2"/>
+		<path d="m14 16h2"/>
+		<path d="m16 14h2"/>
+		<path d="m14 18v-2"/>
+		<path d="m16 16v-2"/>
+		<path d="m18 14v-2-2"/>
+		<path d="m19 18h2 2 2"/>
+		<path d="m25 12h2"/>
+		<path d="m25 18v-2-2-2"/>
+		<path d="m27 12v-2"/>
+		<path d="m28 18h2"/>
+		<path d="m30 16h2 2"/>
+		<path d="m34 14h2"/>
+		<path d="m30 18v-2"/>
+		<path d="m34 16v-2"/>
+		<path d="m36 14v-2-2"/>
+		<path d="m37 18h2 2"/>
+		<path d="m41 14h2 2"/>
+		<path d="m41 18v-2-2"/>
+		<path d="m45 14v-2-2"/>
+		<path d="m46 18h2 2"/>
+		<path d="m50 16h2"/>
+		<path d="m52 12h2"/>
+		<path d="m50 18v-2"/>
+		<path d="m52 16v-2-2"/>
+		<path d="m54 12v-2"/>
+		<path d="m7 27h2 2"/>
+		<path d="m11 23h2"/>
+		<path d="m13 21h2"/>
+		<path d="m11 27v-2-2"/>
+		<path d="m13 23v-2"/>
+		<path d="m15 21v-2"/>
+		<path d="m18 27h2"/>
+		<path d="m20 25h2 2"/>
+		<path d="m24 21h2"/>
+		<path d="m20 27v-2"/>
+		<path d="m24 25v-2-2"/>
+		<path d="m26 21v-2"/>
+		<path d="m29 27h2"/>
+		<path d="m31 25h2"/>
+		<path d="m33 23h2 2"/>
+		<path d="m31 27v-2"/>
+		<path d="m33 25v-2"/>
+		<path d="m37 23v-2-2"/>
+		<path d="m40 27h2"/>
+		<path d="m42 25h2"/>
+		<path d="m44 23h2"/>
+		<path d="m46 21h2"/>
+		<path d="m42 27v-2"/>
+		<path d="m44 25v-2"/>
+		<path d="m46 23v-2"/>
+		<path d="m48 21v-2"/>
+	</g>
+</svg>
