@@ -1,6 +1,6 @@
 ---
 title: Fun with generating functions
-description: Playing around with an elegant mathematical tool
+description: Interesting ways to count things.
 date: 2025-09-29
 ---
 
@@ -70,7 +70,7 @@ $$ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ... $$
 
 But what if we want to know, say, the 200th Fibonacci number? Would we have to solve the recurrence relation 200 times? It turns out that we don't, because we can construct a closed-form formula for the \\(n\\)-th Fibonacci number! This can be done using generating functions!
 
-This is because, essentially, a generating function is a way to represent an infinite sequence as the coefficients of a [formal](https://en.wikipedia.org/wiki/Formal_power_series) power series. Since the series is formal, we are not concerned with its convergence, and the variable \\(x\\) is an [indeterminate](https://en.wikipedia.org/wiki/Polynomial_ring). So the infinite sequence \\( ( a_0, a_1, a_2, ...) \\) can be expressed with the generating function \\( \sum_{n=0}^{\infty} a_n x^n  = a_0 + a_1 x + a_2 x^2 + \cdots \\). For example the sequence \\( (1, 1, 1, ...) \\) has \\( \sum_{n=0}^{\infty} x^n = \frac{1}{1-x} \\) as it's generating function. Note that we can use the closed form of the series to represent the generating function.
+This is because, essentially, a generating function is a way to represent an infinite sequence as the coefficients of a [formal](https://en.wikipedia.org/wiki/Formal_power_series) power series. Since the series is formal, we are not concerned with its convergence, and the variable \\(x\\) is an [indeterminate](https://en.wikipedia.org/wiki/Polynomial_ring). So the infinite sequence \\( ( a_0, a_1, a_2, ...) \\) can be expressed with the generating function \\( \sum_{n=0}^{\infty} a_n x^n  = a_0 + a_1 x + a_2 x^2 + \cdots \\). For example the sequence \\( (1, 1, 1, ...) \\) has \\( \sum_{n=0}^{\infty} x^n = \frac{1}{1-x} \\) as its generating function. Note that we can use the closed form of the series to represent the generating function.
 
 Generating functions defined this way---as the coefficients of a geometric series---are called _ordinary generating functions_. There are [many kinds](https://en.wikipedia.org/wiki/Generating_function#Types) of generating functions; I might mention some more in a future article. Each of them helps us solve a specific class of problems.
 
@@ -183,7 +183,7 @@ Now, thinking ahead for a bit, we can factor -1 from the product so that it canc
 $$ \binom{\frac{1}{2}}{n+1} = \frac{(-1)^n \prod_{k=1}^n (2k - 1)}{2^{n+1} (n+1)!.} $$
 
 We can now plug this expression into the full formula for \\(C_n\\), after canceling out a bunch of stuff, we get
-$$\begin{align\*} C_n &= (-1)^{n+1} (-4)^{n+1} \; \frac{1}{2} \frac{1}{2^{n+1}} \frac{\prod_{k=1}^n (2k - 1)}{(n+1)!} \\\\ &= \cancel{(-1)^{n+1}} \cancel{(-1)^{n+1}} \; \frac{2^{2n+2}}{2^{n+1+1}} \frac{\prod_{k=1}^n (2k - 1)}{(n+1)!} \\\\ &= \frac{\cancel{2^{n+2}}}{\cancel{2^{n+2}}} \; 2^n \frac{\prod_{k=0}^n (2k - 1)}{(n+1)!} \\\\ &= 2^n \frac{\prod_{k=1}^n (2k - 1)}{(n+1)!}. \end{align\*} $$
+$$\begin{align\*} C_n &= (-1)^{n+1} (-4)^{n+1} \; \frac{1}{2} \frac{1}{2^{n+1}} \frac{\prod_{k=1}^n (2k - 1)}{(n+1)!} \\\\ &= \cancel{(-1)^{n+1}} \cancel{(-1)^{n+1}} \; \frac{2^{2n+2}}{2^{n+1+1}} \frac{\prod_{k=1}^n (2k - 1)}{(n+1)!} \\\\ &= \frac{\cancel{2^{n+2}}}{\cancel{2^{n+2}}} \; 2^n \frac{\prod_{k=1}^n (2k - 1)}{(n+1)!} \\\\ &= 2^n \frac{\prod_{k=1}^n (2k - 1)}{(n+1)!}. \end{align\*} $$
 
 But we still have this cumbersome product in the numerator. Perhaps there is a way to write it in a closed form?
 
@@ -200,7 +200,7 @@ $$ 1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, \dots $$
 
 This sequence ([A000108 in the OEIS](https://oeis.org/A000108)) is quite special; its members are called the [Catalan numbers](https://en.wikipedia.org/wiki/Catalan_number). They get their name from [Eugène Charles Catalan](https://en.wikipedia.org/wiki/Eug%C3%A8ne_Charles_Catalan), a 19th-century Belgian mathematician, but they were described much earlier by the Mongolian mathematician [Minggatu](https://en.wikipedia.org/wiki/Minggatu) in the 1730s and [Leonhard Euler](https://en.wikipedia.org/wiki/Leonhard_Euler) in 1751.
 
-What makes this sequence special is the fact that it shows up so commonly in combinatorics. For the sake of brevity, I will just list out the most famous ones:
+What makes this sequence special is the fact that it shows up so commonly in combinatorics. For the sake of brevity, I will just list out the most famous occurrences here:
 
 * The number of legal ways to arrange \\(n\\) sets of parenthesis. This is directly equivalent to the number of possible [Dyck words](https://en.wikipedia.org/wiki/Dyck_language) of length \\(2n\\).
 * The number of ways to triangulate a convex \\((n+2)\\)-gon. This is the way Euler discovered Catalan numbers.
@@ -233,6 +233,6 @@ Well, that's it for this entry! Have fun and happy hacking!
 
 
 [^tree]: Image attribution: `© C. Godfray; © John Dransfield, Royal Botanic Gardens, Kew`. It can be found on [palmweb.org](https://www.palmweb.org/cdm_dataportal/taxon/e4e041df-ab26-4abb-a507-08bec2f14b83/images)
-[^gamma]: We could use the [gamma function](https://en.wikipedia.org/wiki/Gamma_function) to extend the domain of the factorial to all real numbers, but here that wouldn't help us to simplify the whole expression.
+[^gamma]: We could use the [gamma function](https://en.wikipedia.org/wiki/Gamma_function) to extend the domain of the factorial to all real numbers, but that wouldn't help us simplify the expression here.
 [^bills_equ]: Since \\(\left( \sum_{n=0}^\infty x^n \right) \cdot \left( \sum_{n=0}^\infty x^{5n} \right) \cdot \left( \sum_{n=0}^\infty x^{10n}\right)\\) is the generating function for our problem we can derive the expression for the \\(k\\)-th coefficient \\(c_k\\) by using the [Cauchy product](https://en.wikipedia.org/wiki/Cauchy_product). It is not hard to show that for these three sums this becomes \\(c_k = \sum_{a+5b+10c=k} 1\\), thus landing us at the same spot as before --- looking for the number of nonnegative integer solutions to \\(a+5b+10c=k\\).
 [^closed_form]: Whether expressions containing floor functions count as closed form is debatable, but since 'closed form expression' doesn't have a strict definition, I will consider these expressions to count here.
