@@ -44,7 +44,7 @@ body {
     background: rgb(var(--bg-primary));
     color: rgb(var(--text-primary));
     min-height: 100vh;
-    max-width: 2000px;
+    max-width: 1500px;
     width: 100vw;
     margin: auto;
     padding: 2rem 4rem;
@@ -134,7 +134,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
 }
 
 header a:hover {
@@ -143,7 +145,7 @@ header a:hover {
 
 .title {
     position: relative;
-    font: 700 6.5rem 'UnifrakturCook', serif;
+    font: 700 5.5rem 'UnifrakturCook', serif;
     margin-left: 0.8em;
     white-space: nowrap;
 }
@@ -188,7 +190,7 @@ header a:hover {
 nav {
     display: flex;
     gap: 0.5rem;
-    font: normal 1.87rem 'Fira Code';
+    font: normal 1.6rem 'Fira Code';
 }
 
 nav * {
@@ -196,14 +198,15 @@ nav * {
 }
 
 main {
-    margin: 3rem 10% 0;
-    padding: 2rem;
-    font: 350 1.7rem/2.55rem 'Fira Code';
+    font-weight: 350;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 2.5%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.3rem;
+    font-family: 'Fira Code';
     letter-spacing: -0.02rem;
-}
-
-main article {
-    padding-top: 1.5rem;
 }
 
 #article {
@@ -212,7 +215,7 @@ main article {
 }
 
 .article_title {
-    font-size: 3.5rem;
+    font-size: 2.3rem;
     padding: 2rem 0 1.5rem;
     font-weight: 700;
     line-height: 2rem;
@@ -220,7 +223,6 @@ main article {
 
 .article_date {
     font-size: 1.5rem;
-    padding-bottom: 2rem;
 }
 
 .line {
@@ -234,7 +236,9 @@ main article {
 }
 
 .container {
-    font: 350 1.7rem/2.55rem 'Fira Code';
+    font-weight: 350;
+    font-size: 1.4rem;
+    /* font-family: 'Fira Code'; */
     line-height: 1.5em;
 }
 
@@ -242,7 +246,7 @@ main article {
     background: rgba(var(--bg-secondary), 0.3);
     border: 1px solid rgba(var(--bg-secondary), 0.7);
     color: rgb(var(--text-primary));
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     padding: 1em 1.5em;
 }
 
@@ -286,11 +290,11 @@ main article {
 
 .blog_hero {
     font-style: italic;
-    margin-bottom: 5rem;
+    margin-bottom: 4%;
 }
 
 .hero {
-    margin: 3rem 0;
+    margin-top: 2rem;
     justify-content: center;
 }
 
@@ -322,7 +326,7 @@ main article {
 }
 
 .headpiece {
-    max-height: 22rem;
+    max-height: 18rem;
     aspect-ratio: 16/5;
     mask: url('/static/img/headpice.svg') no-repeat center/contain;
     -webkit-mask: url('/static/img/headpice.svg') no-repeat center/contain;
@@ -339,10 +343,6 @@ main article {
 
 #index>div {
     width: 100%;
-}
-
-.posts {
-    margin-top: 4rem;
 }
 
 .posts .text_box {
@@ -365,6 +365,10 @@ main article {
     font-weight: 500;
 }
 
+#blurb {
+    margin: 1.5rem 0;
+}
+
 .katex-display {
     overflow: auto;
     margin: 0.5em 0;
@@ -372,8 +376,8 @@ main article {
 }
 
 .posts_head {
-    padding: 0 0 2rem 2rem;
-    font-style: italic;
+    padding-bottom: 1rem;
+    text-align: center;
 }
 
 .no_color,
@@ -417,7 +421,7 @@ main article {
     align-self: center;
 }
 
-@media (max-width:1500px) {
+@media (max-width:1200px) {
     header {
         flex-direction: column;
         text-align: center;
@@ -427,30 +431,21 @@ main article {
     nav {
         flex-wrap: wrap;
         justify-content: center;
-    }
-
-    main {
-        margin: 2rem 5% 20%;
-        padding: 0;
+        padding-top: 0.3rem;
     }
 
     .title {
         margin-left: 0;
-    }
-
-    .article_title {
-        font-size: 2.3rem;
-    }
-
-    .article_date {
-        font-size: 1.3rem;
-        padding-bottom: 1.5rem;
     }
 }
 
 @media (max-width:1050px) {
     body {
         padding: 0;
+    }
+
+    header {
+        padding: 1rem 0 0.5rem 0;
     }
 
     .container {
@@ -474,11 +469,6 @@ main article {
 
     .article_date {
         font-size: 1rem;
-        padding-bottom: 1.5rem;
-    }
-
-    .hero {
-        margin: 2rem 0;
     }
 }
 
@@ -500,16 +490,12 @@ main article {
         font-size: 1rem;
     }
 
-    header {
-        padding: 1.4rem;
-    }
-
     .date {
-        font-size: 0.65rem;
+        font-size: 0.8rem;
     }
 
     .container {
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
 
     .article_title {
@@ -519,7 +505,6 @@ main article {
 
     .article_date {
         font-size: 0.8rem;
-        padding-bottom: 1rem;
     }
 
     .blog_hero {
@@ -527,11 +512,11 @@ main article {
     }
 
     .hero {
-        margin: 1rem 0;
+        margin-top: 1rem;
     }
 
-    .posts {
-        margin-top: 2rem;
+    #blurb {
+        margin: 1rem 0;
     }
 
     .posts .text_box:last-child {

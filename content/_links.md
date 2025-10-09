@@ -20,7 +20,7 @@ A collection of interesting and helpful links I found on the _World Wide Web_:
 * [gzDoom](https://github.com/ZDoom/gzdoom) is a source port of ID Software's original [Doom](https://github.com/id-Software/DOOM) engine.
 * [doomgeneric](https://github.com/ozkl/doomgeneric) easily portable Doom.
 * [Nethack](https://www.nethack.org/) is an old but still maintained open source roguelike.
-* [Universal pallpapers](https://www.decisionproblem.com/paperclips/index2.html) online game about an AI making paperclips, what could go wrong>
+* [Universal pallpapers](https://www.decisionproblem.com/paperclips/index2.html) online game about an AI making paperclips, what could go wrong?
 * [Powder toy](https://powdertoy.co.uk/) is a relatively modern take on the old falling sand game.
 * [Luanti](https://www.luanti.org/) formerly Minetest, is an open source voxel game similar to Minecraft.
 
