@@ -72,7 +72,7 @@ a {
 main {
     font-weight: 350;
     max-width: 1000px;
-    margin: 4rem auto 0;
+    margin: 4rem auto;
     padding: 0 1rem;
     font-size: 1.3rem;
     font-family: 'Fira Code';
@@ -410,6 +410,10 @@ nav * {
     font: 700 6em 'UnifrakturCook', serif;
     padding-bottom: 3rem;
     align-self: center;
+}
+
+#build_date {
+    margin-top: 3rem;
 }
 
 @media (max-width: 1200px) {
