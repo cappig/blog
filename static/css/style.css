@@ -215,14 +215,14 @@ nav * {
 }
 
 .article_title {
-    font-size: 2.3rem;
-    padding-bottom: 2rem;
+    font-size: 180%;
+    padding-bottom: 1rem;
     font-weight: 700;
     line-height: 2rem;
 }
 
 .article_date {
-    font-size: 1.5rem;
+    color: rgb(var(--text-secondary));
 }
 
 .container {
@@ -318,7 +318,6 @@ nav * {
 }
 
 .blog_hero {
-    font-style: italic;
     margin-bottom: 4%;
 }
 
@@ -378,13 +377,13 @@ nav * {
 }
 
 .date {
-    font-size: 1.4rem;
+    font-size: 80%;
     font-weight: 200;
 }
 
 .description {
     margin-top: 0.3rem;
-    font: 300 1.5rem 'Fira Code';
+    font: 300 90% 'Fira Code';
 }
 
 .footnote {
@@ -440,10 +439,6 @@ nav * {
         padding: 1rem 0 0.5rem;
     }
 
-    .container {
-        font-size: 1.4rem;
-    }
-
     .text_box {
         margin: 0;
     }
@@ -453,14 +448,6 @@ nav * {
         height: 3rem;
         bottom: 1.5rem;
         right: 1.5rem;
-    }
-
-    .article_title {
-        font-size: 2rem;
-    }
-
-    .article_date {
-        font-size: 1rem;
     }
 }
 
@@ -486,21 +473,8 @@ nav * {
         font-size: 1rem;
     }
 
-    .date {
-        font-size: 0.8rem;
-    }
-
     .container {
         font-size: 1rem;
-    }
-
-    .article_title {
-        font-size: 1.5rem;
-        padding-bottom: 1rem;
-    }
-
-    .article_date {
-        font-size: 0.8rem;
     }
 
     #blurb {
@@ -509,10 +483,6 @@ nav * {
 
     .posts .text_box:last-child {
         margin-bottom: 1rem;
-    }
-
-    .description {
-        font-size: 0.75rem;
     }
 
     .posts_head {
