@@ -16,7 +16,7 @@
     <main>
         <div class="container" id="article">
             <div class="article_title">{{ title }}</div>
-            <div class="article_date">{{ strftime('%d/%m/%Y', date) }}</div>
+            <div class="article_date">{{ strftime('%B %d, %Y', date) }} | by {{ author }}</div>
 
             <article>
 {{ content | safe }}

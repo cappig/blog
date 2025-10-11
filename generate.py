@@ -62,7 +62,7 @@ def write_page(template_name, output_name, context=None):
         "js_hash": get_file_hash("static/js/theme.js"),
     }
 
-    rendered = template.render(now=gen_time, **version, **(context or {}))
+    rendered = template.render(gen_time=gen_time, **version, **(context or {}))
 
     output_path = output_dir / output_name
     output_path.parent.mkdir(parents=True, exist_ok=True)

@@ -26,7 +26,7 @@
 
                 {% for post in latest_posts %}
                 <a href="/blog/{{ post.slug }}" class="no_color">
-                    <div class="text_box" id="post">{{ post.title }}<span class="date">{{ strftime('%d/%m/%Y', post.date) }}</span></div>
+                    <div class="text_box" id="post">{{ post.title }}<span class="date">{{ strftime('%B %d, %Y', post.date) }}</span></div>
                 </a>
                 {% else %}
                 <p>... its lonely here</p>

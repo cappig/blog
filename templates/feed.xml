@@ -3,7 +3,7 @@
     <title>Cappig's blog</title>
     <link href="https://cappig.dev/blog" rel="alternate"/>
     <link href="https://cappig.dev/blog/feed.xml" rel="self"/>
-    <updated>{{ strftime('%Y-%m-%dT%H:%M:%SZ', now) }}</updated>
+    <updated>{{ strftime('%Y-%m-%dT%H:%M:%SZ', gen_time) }}</updated>
     <id>https://cappig.dev/blog/</id>
     <author>
         <name>Cappig</name>

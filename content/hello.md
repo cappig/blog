@@ -1,10 +1,11 @@
 ---
 title: Stupid simple blog
 description: How I generate my simple little website.
+author: Cappig
 date: 2025-08-03
 ---
 
-_Well hello there, welcome to my inaugural blog post!_
+Well hello there, welcome to my inaugural blog post!
 
 ### Why does this site exist?
 
@@ -22,7 +23,7 @@ OK, so what about a static site generator? They are the perfect fit for sites li
 
 So I implemented the first thing that came to mind --- a Python script that takes in markdown, passes it through some templates, and spits out plain old HTML files.
 
-And it just works! Plain and simple. I really have no complaints. The little Python glue code is a couple hundred lines long, most of which is just boilerplate. 
+And it just works! Plain and simple. I really have no complaints. The little Python glue code is a couple hundred lines long, most of which is just boilerplate.
 
 It works something like this. We call this function:
 

@@ -16,11 +16,11 @@
 
             <article>
 {{ content | safe }}
-            </article>
 
-            <div class="text_box" id="build_date">
-                Site built on: <i>{{ strftime('%d/%m/%Y %H:%M:%S', now) }} UTC</i> (commit <a target="_blank" href="https://github.com/cappig/blog/commit/{{ git_hash }}"><i>{{ git_hash }}</i></a>)
-            </div>
+                <div class="text_box" id="build_date">
+                    Site built on <i>{{ strftime('%B %d, %Y', gen_time) }}</i> at <i>{{ strftime('%H:%M:%S', gen_time) }} UTC</i> from commit <a target="_blank" href="https://github.com/cappig/blog/commit/{{ git_hash }}"><i>{{ git_hash }}</i></a>
+                </div>
+            </article>
         </div>
     </main>
 

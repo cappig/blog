@@ -2,8 +2,8 @@
     --bg-primary: 255, 255, 244;
     --bg-secondary: 238, 238, 215;
     --text-primary: 35, 35, 35;
-    --text-secondary: 55, 55, 55;
-    --accent-hover: 35, 135, 137;
+    --text-secondary: 65, 65, 65;
+    --accent-hover: 20, 115, 117;
     --accent-light: 255, 172, 20;
 }
 
@@ -37,7 +37,7 @@
 }
 
 ::selection {
-    background-color: rgba(var(--accent-hover), 0.4);
+    background-color: rgba(var(--accent-hover), 0.35);
 }
 
 body {
@@ -47,7 +47,7 @@ body {
     max-width: 1500px;
     width: 100vw;
     margin: auto;
-    padding: 2rem 4rem;
+    padding: 0 4rem;
     overflow-x: hidden;
 }
 
@@ -72,7 +72,7 @@ a {
 main {
     font-weight: 350;
     max-width: 900px;
-    margin: 4rem auto;
+    margin: 3rem auto;
     padding: 0 1rem;
     font-family: 'Fira Code';
     letter-spacing: -0.02em;
@@ -147,7 +147,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 0 2rem 2rem;
+    padding: 1.5rem 2rem;
 }
 
 header a:hover {
@@ -166,7 +166,7 @@ nav * {
 
 .title {
     position: relative;
-    font: 700 4.5rem 'UnifrakturCook', serif;
+    font: 700 4rem 'UnifrakturCook', serif;
     margin-left: 0.8em;
     white-space: nowrap;
 }
@@ -208,6 +208,10 @@ nav * {
     color: rgb(var(--accent-light));
 }
 
+article {
+    margin: 2.5em 0;
+}
+
 #article {
     width: 95%;
     margin: auto;
@@ -215,7 +219,7 @@ nav * {
 
 .article_title {
     font-size: 180%;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
     font-weight: 700;
     line-height: 2rem;
 }
@@ -375,8 +379,9 @@ nav * {
 }
 
 .date {
-    font-size: 80%;
-    font-weight: 200;
+    font: 300 80% 'Fira Code';
+    display: flex;
+    align-items: center;
 }
 
 .description {
@@ -411,7 +416,15 @@ nav * {
 }
 
 #build_date {
-    margin-top: 3rem;
+    margin-top: 3em;
+}
+
+article > :first-child {
+    margin-top: 0;
+}
+
+article > :last-child {
+    margin-bottom: 0;
 }
 
 @media (max-width: 1200px) {
@@ -419,6 +432,7 @@ nav * {
         flex-direction: column;
         text-align: center;
         align-items: center;
+        padding: 1rem 2rem;
     }
 
     nav {
@@ -455,7 +469,7 @@ nav * {
 
 @media (max-width: 800px) {
     .title {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 
     .line {
@@ -472,7 +486,7 @@ nav * {
     }
 
     nav {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .container {

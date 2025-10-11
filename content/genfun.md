@@ -1,12 +1,12 @@
 ---
 title: Fun with generating functions
 description: Interesting ways to count things.
+author: Cappig
 date: 2025-09-29
 ---
 
 ![clothesline](/static/img/article/wash_line.jpeg)*"A generating function is a clothesline on which we hang up a sequence of numbers for display" -- Herbert Wilf, [Generatingfunctionology](https://www2.math.upenn.edu/~wilf/gfology2.pdf)*
 {: .img_box }
-
 
 ## Counting bills
 
@@ -17,7 +17,7 @@ Let’s work it out: we could use ten $1 bills, five $1 bills, and one $5 bill, 
 
 Let’s examine the problem again. Note that each denomination contributes some multiple of its value, so we can only possibly choose a set number of bills of each denomination. For $1 bills, we can take 0, 1, 2, or any other number up to 10. For $5 bills, we can take 0, 1, or 2. For $10 bills, we can only take 0 or 1.
 
-So we have to find the number of valid combinations of these bills. Is there a way to _encode_ these values so that they can be easily manipulated and the answer easily extracted? One seemingly random way to do this is to use polynomials. Let the exponent track the total sum and the coefficient track the number of ways to achieve that sum. So, for example, \\(4 x^{12}\\) would mean that there are 4 ways to add up our bills to get the value 12.
+So we have to find the number of valid combinations of these bills. Is there a way to *encode* these values so that they can be easily manipulated and the answer easily extracted? One seemingly random way to do this is to use polynomials. Let the exponent track the total sum and the coefficient track the number of ways to achieve that sum. So, for example, \\(4 x^{12}\\) would mean that there are 4 ways to add up our bills to get the value 12.
 
 For the $1 bill, we construct the polynomial \\(1 + x + \dots + x^{10}\\) because we can achieve any sum by just choosing that number or $1 bills. For the $5 bill we have \\(1 + x^5 + x^{10}\\), and similarly for the $10 bills we have \\(1 + x^{10}\\). Note the presence of \\(x^0\\), this is because we can always choose zero of a given denomination.
 
@@ -54,7 +54,6 @@ We can factor the last expression and get the following closed form[^closed_form
 $$c_k = \left( \left\lfloor \frac{k}{10} \right\rfloor + 1 \right) \left( \left\lfloor \frac{k}{5} \right\rfloor + 1 - \left\lfloor \frac{k}{10} \right\rfloor \right).$$
 </details>
 
-
 ## Fibonacci numbers
 
 One of the most famous integer sequences in mathematics is the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_sequence) ([A000045 in the OEIS](https://oeis.org/A000045)). It gets its name from the Italian mathematician [Leonardo of Pisa](https://en.wikipedia.org/wiki/Fibonacci), known commonly as Fibonacci, who described them in his 1202 book [Liber Abaci](https://en.wikipedia.org/wiki/Liber_Abaci). Latin for "The Book of Calculation", it also introduced, among other things, the [Hindu–Arabic base 10 numerals](https://en.wikipedia.org/wiki/Hindu%E2%80%93Arabic_numeral_system) to Europe. But this sequence has been known to humans for a lot longer than that, first appearing in the writings of [Indian mathematicians](https://en.wikipedia.org/wiki/Indian_mathematics#Pingala_(300_BCE_%E2%80%93_200_BCE)) around 200 BCE.
@@ -72,7 +71,7 @@ But what if we want to know, say, the 200th Fibonacci number? Would we have to s
 
 This is because, essentially, a generating function is a way to represent an infinite sequence as the coefficients of a [formal](https://en.wikipedia.org/wiki/Formal_power_series) power series. The series being formal means that we are not concerned with its convergence, and the variable \\(x\\) is an [indeterminate](https://en.wikipedia.org/wiki/Polynomial_ring). So the infinite sequence \\((a_0, a_1, a_2,...)\\) can be expressed with the generating function \\(\sum_{n=0}^{\infty} a_n x^n  = a_0 + a_1 x + a_2 x^2 + \cdots\\). For example the sequence \\((1, 1, 1, ...)\\) has \\(\sum_{n=0}^{\infty} x^n = \frac{1}{1-x}\\) as its generating function. Note that we can use the closed form of the series to represent the generating function.
 
-Generating functions defined this way---as the coefficients of a geometric series---are called _ordinary generating functions_. There are [many kinds](https://en.wikipedia.org/wiki/Generating_function#Types) of generating functions; I might mention some more in a future article. Each of them helps us solve a specific class of problems.
+Generating functions defined this way---as the coefficients of a geometric series---are called *ordinary generating functions*. There are [many kinds](https://en.wikipedia.org/wiki/Generating_function#Types) of generating functions; I might mention some more in a future article. Each of them helps us solve a specific class of problems.
 
 OK, back to the Fibonacci sequence. Let's start by defining its generating function as
 $$F(x) = \sum_{n=0}^{\infty} F_n x^n.$$
@@ -117,7 +116,6 @@ $$\lim_{n \to \infty} \frac{\phi - \cancel{\psi\left(\frac{\psi}{\phi}\right)^{n
 
 While the golden ratio has some [interesting mathematical properties](https://en.wikipedia.org/wiki/Golden_ratio#Mathematics), a lot of the things [claimed](https://en.wikipedia.org/wiki/Golden_ratio#Disputed_observations) about it are unfortunately tantamount to numerology.
 </details>
-
 
 ## Counting trees
 
@@ -217,7 +215,6 @@ What makes this sequence special is the fact that it shows up so commonly. For t
 
 There are many, many more. Wikipedia [lists](https://en.wikipedia.org/wiki/Catalan_number#Applications_in_combinatorics) a couple more, and [Richard P. Stanley's](https://en.wikipedia.org/wiki/Richard_P._Stanley) definitive monograph [Catalan Numbers](http://www.cambridge.org/9781107427747) has some 200 pages worth of dense information on just this one sequence. Stanley also produced some [slides](https://math.mit.edu/~rstan/transparencies/miami_catalan.pdf) that summarize this topic and elucidate some of the examples given above.
 
-
 ### Conclusion
 
 This is only the tip of the generating function iceberg. They are a really useful mathematical tool that is also fun to work with. I'll probably write another article about them.
@@ -234,8 +231,5 @@ As always, 3Blue1Brown has an excellent [video](https://www.youtube.com/watch?v=
 
 ~ Well, that's it for this entry! Have fun and happy hacking!
 
-
-
 [^tree]: Image attribution: `© C. Godfray; © John Dransfield, Royal Botanic Gardens, Kew`. It can be found on [palmweb.org](https://www.palmweb.org/cdm_dataportal/taxon/e4e041df-ab26-4abb-a507-08bec2f14b83/images)
-[^bills_equ]: Since \\(\left( \sum_{n=0}^\infty x^n \right) \cdot \left( \sum_{n=0}^\infty x^{5n} \right) \cdot \left( \sum_{n=0}^\infty x^{10n}\right)\\) is the generating function for our problem we can derive the expression for the \\(k\\)-th coefficient \\(c_k\\) by using the [Cauchy product](https://en.wikipedia.org/wiki/Cauchy_product). It is not hard to show that for these three sums this becomes \\(c_k = \sum_{a+5b+10c=k} 1\\), thus landing us at the same spot as before --- looking for the number of nonnegative integer solutions to \\(a+5b+10c=k\\).
 [^closed_form]: Whether expressions containing floor functions count as closed form is debatable, but since 'closed form expression' doesn't have a strict definition, I will consider these expressions to count here.
