@@ -24,7 +24,7 @@ cappig.dev, www.cappig.dev {
     header @static Cache-Control "public, max-age=31536000"
 
     @images {
-        path *.svg *.ico *.jpg *.png *.webp
+        path *.svg *.ico *.jpg *.jpeg *.png *.webp
     }
     header @images Cache-Control "public, max-age=15552000"
 

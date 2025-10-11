@@ -1,4 +1,4 @@
-A collection of interesting and helpful links I found on the _World Wide Web_:
+A collection of interesting links I found on the _World Wide Web_:
 
 ### Software
 
