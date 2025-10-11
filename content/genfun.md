@@ -231,5 +231,6 @@ As always, 3Blue1Brown has an excellent [video](https://www.youtube.com/watch?v=
 
 ~ Well, that's it for this entry! Have fun and happy hacking!
 
-[^tree]: Image attribution: `© C. Godfray; © John Dransfield, Royal Botanic Gardens, Kew`. It can be found on [palmweb.org](https://www.palmweb.org/cdm_dataportal/taxon/e4e041df-ab26-4abb-a507-08bec2f14b83/images)
+[^tree]: Image attribution: `© C. Godfray; © John Dransfield, Royal Botanic Gardens, Kew`. It can be found on [palmweb.org](https://www.palmweb.org/cdm_dataportal/taxon/e4e041df-ab26-4abb-a507-08bec2f14b83/images).
+[^bills_equ]: Since \\(\left( \sum_{n=0}^\infty x^n \right) \cdot \left( \sum_{n=0}^\infty x^{5n} \right) \cdot \left( \sum_{n=0}^\infty x^{10n}\right)\\) is the generating function for our problem we can derive the expression for the \\(k\\)-th coefficient \\(c_k\\) by using the [Cauchy product](https://en.wikipedia.org/wiki/Cauchy_product). It is not hard to show that for these three sums this becomes \\(c_k = \sum_{a+5b+10c=k} 1\\), thus landing us at the same spot as before --- looking for the number of nonnegative integer solutions to \\(a+5b+10c=k\\).
 [^closed_form]: Whether expressions containing floor functions count as closed form is debatable, but since 'closed form expression' doesn't have a strict definition, I will consider these expressions to count here.
