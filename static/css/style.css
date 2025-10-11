@@ -405,14 +405,19 @@ article {
 }
 
 .not_found {
-    min-height: 60vh;
+    min-height: 70vh;
     justify-content: center;
 }
 
 .text_404 {
-    font: 700 6em 'UnifrakturCook', serif;
-    padding-bottom: 3rem;
-    align-self: center;
+    font-size: 120%;
+    color: rgb(var(--text-secondary));
+    font-style: italic;
+    font-weight: 400;
+}
+
+.img_404 {
+    max-width: 80%;
 }
 
 #build_date {
@@ -499,6 +504,10 @@ article > :last-child {
 
     .posts .text_box:last-child {
         margin-bottom: 1rem;
+    }
+
+    #post {
+        flex-direction: column-reverse;
     }
 
     .posts_head {
