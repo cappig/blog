@@ -10,25 +10,23 @@
 <body>
     {% include "partial/header.html" %}
 
-    <main>
-        <div class="container" id="index">
-            <div class="posts">
-                <div class="blog_hero">
-                    <div class="book"></div>
-                    <p>Cappig's blog posts (<a href="/blog/feed.xml">Atom feed</a>):</p>
-                </div>
-
-                {% for post in posts %}
-                <a href="/blog/{{ post.slug }}" class="no_color">
-                    <div class="text_box">
-                        <div id=post>{{ post.title }} <span class="date">{{ strftime('%B %d, %Y', post.date) }}</span></div>
-                        <div class="description">{{ post.description }}</div>
-                    </div>
-                </a>
-                {% else %}
-                <p>... its lonely here</p>
-                {% endfor %}
+    <main id="index">
+        <div class="posts">
+            <div class="blog_hero">
+                <div class="book"></div>
+                <p>Cappig's blog posts (<a href="/blog/feed.xml">Atom feed</a>):</p>
             </div>
+
+            {% for post in posts %}
+            <a href="/blog/{{ post.slug }}" class="no_color">
+                <div class="text_box">
+                    <div id=post>{{ post.title }} <span class="date">{{ strftime('%B %d, %Y', post.date) }}</span></div>
+                    <div class="description">{{ post.description }}</div>
+                </div>
+            </a>
+            {% else %}
+            <p>... its lonely here</p>
+            {% endfor %}
         </div>
     </main>
 

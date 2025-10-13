@@ -11,17 +11,14 @@
     {% include "partial/header.html" %}
 
     <main>
-        <div class="container" id="article">
-            <div class="article_title">About me</div>
-
-            <article>
+        <div class="article_title">About me</div>
+        <article>
 {{ content | safe }}
 
-                <div class="text_box" id="build_date">
-                    Site built on <i>{{ strftime('%B %d, %Y', gen_time) }}</i> at <i>{{ strftime('%H:%M:%S', gen_time) }} UTC</i> from commit <a target="_blank" href="https://github.com/cappig/blog/commit/{{ git_hash }}"><i>{{ git_hash }}</i></a>
-                </div>
-            </article>
-        </div>
+            <div class="text_box" id="build_date">
+                Built on <i>{{ strftime('%B %d, %Y', gen_time) }}</i> at <i>{{ strftime('%H:%M:%S', gen_time) }} UTC</i> from commit <a target="_blank" href="https://github.com/cappig/blog/commit/{{ git_hash }}"><i>{{ git_hash }}</i></a>
+            </div>
+        </article>
     </main>
 
     {% include "partial/theme_button.html" %}

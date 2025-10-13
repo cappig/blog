@@ -14,14 +14,12 @@
     {% include "partial/header.html" %}
 
     <main>
-        <div class="container" id="article">
-            <div class="article_title">{{ title }}</div>
-            <div class="article_date">{{ strftime('%B %d, %Y', date) }} | by {{ author }}</div>
+        <div class="article_title">{{ title }}</div>
+        <div class="article_date">{{ strftime('%B %d, %Y', date) }} | by {{ author }}</div>
 
-            <article>
+        <article>
 {{ content | safe }}
-            </article>
-        </div>
+        </article>
     </main>
 
     {% include "partial/theme_button.html" %}

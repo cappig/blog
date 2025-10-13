@@ -11,15 +11,13 @@
     {% include "partial/header.html" %}
 
     <main>
-        <div class="container" id="article">
-            <div class="article_title">Interesting links</div>
+        <div class="article_title">Interesting links</div>
 
-            <article>
+        <article>
 {{ content | safe }}
-            </article>
+        </article>
 
-            <div class="bookshelf"></div>
-        </div>
+        <div class="bookshelf"></div>
     </main>
 
     {% include "partial/theme_button.html" %}
