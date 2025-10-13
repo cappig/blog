@@ -141,7 +141,7 @@ $$C_n = \sum_{k=0}^{n-1} C_{k} C_{n-1-k}, \quad n \geq 1.$$
 As stated above, our initial condition is \\(C_0=1\\). You can start plugging numbers in and verify that this lines up with the number of graphs we got earlier. This is nice and useful, but we want the coveted closed-form expression. This can be achieved using, you guessed it, generating functions!
 
 Let's define the generating function for Catalan numbers as
-$$C(x) = \sum_{n=0}^{\infty} C_n x^n$$
+$$C(x) = \sum_{n=0}^{\infty} C_n x^n.$$
 
 Taking the recurrence relation that we just derived and multiplying both sides by \\(x^n\\) and summing for \\(n \geq 1\\) yields
 $$\begin{align\*} \sum_{n=1}^{\infty} \left(\sum_{k=0}^{n-1} C_k C_{n-1-k}\right) x^n &= \sum_{n=1}^{\infty} C_n x^n \\\\ &= \sum_{n=0}^{\infty} C_n x^n - C_0 \\\\ &= C(x) - 1. \end{align\*}$$

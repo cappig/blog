@@ -15,6 +15,7 @@
     --accent-hover: 45, 175, 180;
 }
 
+
 @font-face {
     font-family: 'UnifrakturCook';
     font-style: normal;
@@ -24,10 +25,45 @@
 }
 
 @font-face {
-    font-family: 'Fira Code';
+    font-display: swap;
+    font-family: 'IBM Plex Mono';
     font-style: normal;
-    src: url('/static/fonts/FiraCode_v6.2.woff2') format('woff2');
+    font-weight: 400;
+    src: url('/static/fonts/ibm-plex-mono-v20-latin-regular.woff2') format('woff2');
 }
+
+@font-face {
+    font-display: swap;
+    font-family: 'IBM Plex Mono';
+    font-style: italic;
+    font-weight: 400;
+    src: url('/static/fonts/ibm-plex-mono-v20-latin-italic.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/static/fonts/ibm-plex-mono-v20-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/static/fonts/ibm-plex-mono-v20-latin-600.woff2') format('woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'IBM Plex Mono';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/static/fonts/ibm-plex-mono-v20-latin-700.woff2') format('woff2');
+}
+
 
 * {
     margin: 0;
@@ -50,9 +86,9 @@ body {
     padding: 0 4rem;
     overflow-x: hidden;
     letter-spacing: -0.02em;
-    font-family: 'Fira Code';
-    font-weight: 350;
-    font-size: 1.15rem;
+    font-family: 'IBM Plex Mono';
+    font-weight: 400;
+    font-size: 1.1rem;
 }
 
 h2, h3, h4 {
@@ -81,8 +117,8 @@ main {
     max-width: 800px;
     margin: 3rem auto;
     padding: 0 2em;
-    font-weight: 350;
-    line-height: 150%;
+    font-weight: 400;
+    line-height: 140%;
 }
 
 main a {
@@ -219,6 +255,7 @@ nav * {
 
 article {
     margin: 2em 0;
+    line-height: 170%;
 }
 
 .article_title {
@@ -377,7 +414,8 @@ article {
 }
 
 .date {
-    font: 300 80% 'Fira Code';
+    font-weight: 400;
+    font-size: 80%;
     display: flex;
     align-items: center;
     font-style: italic;
@@ -385,7 +423,8 @@ article {
 
 .description {
     margin-top: 0.3rem;
-    font: 300 90% 'Fira Code';
+    font-weight: 400;
+    font-size: 90%;
 }
 
 .footnote {
