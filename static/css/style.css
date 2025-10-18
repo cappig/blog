@@ -3,7 +3,7 @@
     --bg-secondary: 238, 238, 215;
     --text-primary: 35, 35, 35;
     --text-secondary: 65, 65, 65;
-    --accent-hover: 20, 115, 117;
+    --accent-hover: 18, 138, 140;
     --accent-light: 255, 172, 20;
 }
 
@@ -14,56 +14,6 @@
     --text-secondary: 235, 235, 215;
     --accent-hover: 45, 175, 180;
 }
-
-
-@font-face {
-    font-family: 'UnifrakturCook';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url('/static/fonts/unifrakturcook-v24.woff2') format('woff2');
-}
-
-@font-face {
-    font-display: swap;
-    font-family: 'IBM Plex Mono';
-    font-style: normal;
-    font-weight: 400;
-    src: url('/static/fonts/ibm-plex-mono-v20-latin-regular.woff2') format('woff2');
-}
-
-@font-face {
-    font-display: swap;
-    font-family: 'IBM Plex Mono';
-    font-style: italic;
-    font-weight: 400;
-    src: url('/static/fonts/ibm-plex-mono-v20-latin-italic.woff2') format('woff2');
-}
-
-@font-face {
-    font-display: swap;
-    font-family: 'IBM Plex Mono';
-    font-style: normal;
-    font-weight: 500;
-    src: url('/static/fonts/ibm-plex-mono-v20-latin-500.woff2') format('woff2');
-}
-
-@font-face {
-    font-display: swap;
-    font-family: 'IBM Plex Mono';
-    font-style: normal;
-    font-weight: 600;
-    src: url('/static/fonts/ibm-plex-mono-v20-latin-600.woff2') format('woff2');
-}
-
-@font-face {
-    font-display: swap;
-    font-family: 'IBM Plex Mono';
-    font-style: normal;
-    font-weight: 700;
-    src: url('/static/fonts/ibm-plex-mono-v20-latin-700.woff2') format('woff2');
-}
-
 
 * {
     margin: 0;
@@ -80,18 +30,20 @@ body {
     background: rgb(var(--bg-primary));
     color: rgb(var(--text-primary));
     min-height: 100vh;
-    max-width: 1400px;
+    max-width: 1300px;
     width: 100vw;
     margin: auto;
     padding: 0 4rem;
     overflow-x: hidden;
     letter-spacing: -0.02em;
-    font-family: 'IBM Plex Mono';
+    font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
     font-size: 1.1rem;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
     margin: 2em 0 1em;
     font-weight: 600;
 }
@@ -218,7 +170,7 @@ nav * {
 
 .title::before,
 .title::after {
-    font-family: 'Noto Sans Egyptian Hieroglyphs';
+    /* font-family: 'Noto Sans Egyptian Hieroglyphs'; */
     position: absolute;
     content: "";
     background-color: currentColor;
@@ -255,7 +207,7 @@ nav * {
 
 article {
     margin: 2em 0;
-    line-height: 170%;
+    line-height: 160%;
 }
 
 .article_title {
@@ -372,7 +324,7 @@ article {
     gap: 1rem;
 }
 
-#index > div {
+#index>div {
     width: 100%;
 }
 
@@ -462,11 +414,11 @@ article {
     margin-top: 3em;
 }
 
-article > :first-child {
+article> :first-child {
     margin-top: 0;
 }
 
-article > :last-child {
+article> :last-child {
     margin-bottom: 0;
 }
 
@@ -481,7 +433,6 @@ article > :last-child {
     nav {
         flex-wrap: wrap;
         justify-content: center;
-        padding-top: 0.3rem;
     }
 
     .title {
@@ -495,7 +446,6 @@ article > :last-child {
     }
 
     header {
-        /* padding: 1rem 0 0.5rem; */
         padding: 1rem 0 0 0;
     }
 
@@ -549,9 +499,5 @@ article > :last-child {
 @media (max-width: 420px) {
     body {
         font-size: 0.9rem;
-    }
-
-    nav {
-        font-size: 0.95rem;
     }
 }

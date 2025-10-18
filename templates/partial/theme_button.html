@@ -2,4 +2,13 @@
     <span class="theme_icon"></span>
 </button>
 
-<script src="/static/js/theme.js?v={{ js_hash }}" defer></script>
+<script>
+const root = document.documentElement;
+const theme = localStorage.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+root.dataset.theme = theme;
+
+function toggle_theme() {
+    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    localStorage.theme = root.dataset.theme;
+}
+</script>

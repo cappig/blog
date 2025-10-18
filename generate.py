@@ -57,9 +57,9 @@ def write_page(template_name, output_name, context=None):
     template = env.get_template(template_name)
 
     version = {
-        "css_hash": get_file_hash("static/css/style.css"),
+        "style_css_hash": get_file_hash("static/css/style.css"),
         "code_css_hash": get_file_hash("static/css/code.css"),
-        "js_hash": get_file_hash("static/js/theme.js"),
+        "font_css_hash": get_file_hash("static/css/font.css")
     }
 
     rendered = template.render(gen_time=gen_time, **version, **(context or {}))
