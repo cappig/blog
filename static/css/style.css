@@ -170,7 +170,6 @@ nav * {
 
 .title::before,
 .title::after {
-    /* font-family: 'Noto Sans Egyptian Hieroglyphs'; */
     position: absolute;
     content: "";
     background-color: currentColor;
@@ -397,17 +396,22 @@ article {
 .not_found {
     min-height: 70vh;
     justify-content: center;
+    text-align: center;
 }
 
-.text_404 {
-    font-size: 120%;
-    color: rgb(var(--text-secondary));
+.not_found>p {
+    color: rgb(var(--text-primary));
+    margin: 1rem 0;
+}
+
+#text_404_top {
+    font-size: 300%;
+    font-weight: 700;
+}
+
+#text_404_bottom {
+    font-size: 200%;
     font-style: italic;
-    font-weight: 400;
-}
-
-.img_404 {
-    max-width: 80%;
 }
 
 #build_date {
