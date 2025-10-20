@@ -400,18 +400,19 @@ article {
 }
 
 .not_found>p {
-    color: rgb(var(--text-primary));
-    margin: 1rem 0;
+    color: rgb(var(--text-secondary));
+    margin: 0;
 }
 
 #text_404_top {
-    font-size: 300%;
+    color: rgb(var(--text-primary));
+    font-size: 210%;
     font-weight: 700;
+    margin-bottom: 0.5em;
 }
 
 #text_404_bottom {
-    font-size: 200%;
-    font-style: italic;
+    font-size: 110%;
 }
 
 #build_date {
