@@ -134,7 +134,7 @@ def generate_post(post):
     article = frontmatter.load(post["filepath"])
     post["content"] = render_markdown(article.content)
 
-    context = {"content": post["content"], **article.metadata}
+    context = {"content": post["content"], "slug": post["slug"], **article.metadata}
 
     write_page("article.html", f"blog/{post['slug']}.html", context)
 

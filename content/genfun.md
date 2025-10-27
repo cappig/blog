@@ -3,6 +3,7 @@ title: Fun with generating functions
 description: Interesting ways to count things.
 author: Cappig
 date: 2025-09-29
+image: /static/img/article/wash_line.jpeg
 ---
 
 ![clothesline](/static/img/article/wash_line.jpeg)*"A generating function is a clothesline on which we hang up a sequence of numbers for display" -- Herbert Wilf, [Generatingfunctionology](https://www2.math.upenn.edu/~wilf/gfology2.pdf)*
