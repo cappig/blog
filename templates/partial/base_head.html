@@ -1,5 +1,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+
+<script>
+const root = document.documentElement;
+const theme = localStorage.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+root.dataset.theme = theme;
+
+function toggle_theme() {
+    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    localStorage.theme = root.dataset.theme;
+}
+</script>
+
 <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico">
 <link rel="alternate" title="Cappig's Atom feed" type="application/atom+xml" href="/blog/feed.xml">
 <link rel="stylesheet" href="/static/css/style.css?v={{ style_css_hash }}">

@@ -1,14 +1,3 @@
 <button class="theme" onclick="toggle_theme()" title="Toggle theme">
     <span class="theme_icon"></span>
 </button>
-
-<script>
-const root = document.documentElement;
-const theme = localStorage.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-root.dataset.theme = theme;
-
-function toggle_theme() {
-    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    localStorage.theme = root.dataset.theme;
-}
-</script>
