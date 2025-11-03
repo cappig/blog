@@ -30,7 +30,7 @@ def slugify(text):
 def render_markdown(content):
     return markdown.markdown(
         content,
-        extensions=["extra", "codehilite", "smarty", "nl2br"],
+        extensions=["extra", "codehilite", "smarty"],
         extension_configs={"codehilite": {"css_class": "highlight"}},
     )
 
