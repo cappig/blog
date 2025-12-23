@@ -29,11 +29,9 @@
 body {
     background: rgb(var(--bg-primary));
     color: rgb(var(--text-primary));
-    min-height: 100vh;
-    max-width: 1300px;
+    max-width: 1000px;
     width: 100vw;
-    margin: auto;
-    padding: 0 4rem;
+    margin: 2rem auto;
     overflow-x: hidden;
     letter-spacing: -0.02em;
     font-family: 'IBM Plex Mono', monospace;
@@ -142,7 +140,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 1.4rem 2rem;
 }
 
 header a:hover {
@@ -174,7 +171,7 @@ nav * {
     content: "";
     background-color: currentColor;
     mask-repeat: no-repeat;
-    mask-position: center;
+    mask-position: cente;
     mask-size: contain;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
@@ -243,12 +240,13 @@ article {
 .line {
     width: 100%;
     height: 15px;
+    margin: 1.5rem 0;
     background-color: rgb(var(--text-primary));
-    mask: url('/static/img/line.svg') repeat-x;
+    mask: url('/static/img/line.svg?v=2') repeat-x;
+    -webkit-mask: url('/static/img/line.svg?v=2') repeat-x;
     mask-size: 25rem auto;
-    mask-position: center;
-    -webkit-mask: url('/static/img/line.svg') repeat-x;
     -webkit-mask-size: 25rem auto;
+    mask-position: center;
     -webkit-mask-position: center;
 }
 
@@ -428,16 +426,23 @@ article> :last-child {
 }
 
 @media (max-width: 1200px) {
+    body {
+        margin: 1rem auto;
+    }
+
     header {
         flex-direction: column;
         text-align: center;
         align-items: center;
-        padding: 1rem 2rem;
     }
 
     nav {
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    .line {
+        margin: 0.8rem 0;
     }
 
     .title {
@@ -446,14 +451,6 @@ article> :last-child {
 }
 
 @media (max-width: 1050px) {
-    body {
-        padding: 0;
-    }
-
-    header {
-        padding: 1rem 0 0 0;
-    }
-
     .text_box {
         margin: 0;
     }
