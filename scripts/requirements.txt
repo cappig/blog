@@ -3,3 +3,4 @@ markdown
 jinja2
 unidecode
 pygments
+requests

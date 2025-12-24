@@ -18,6 +18,11 @@ cappig.dev, www.cappig.dev {
     }
     header @fonts Cache-Control "public, max-age=31536000, immutable"
 
+    @katex {
+        path_regexp ^/static/katex/
+    }
+    header @katex Cache-Control "public, max-age=31536000, immutable"
+
     @static {
         path *.css *.js
     }

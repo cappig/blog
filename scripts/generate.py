@@ -4,10 +4,11 @@ import markdown
 import re
 import unidecode
 import subprocess
+import os
+import sys
 from datetime import datetime, timezone
 from jinja2 import Environment, FileSystemLoader
 from pathlib import Path
-import os
 
 content_dir = Path("content")
 template_dir = Path("templates")
@@ -26,7 +27,6 @@ def slugify(text):
 
     return text
 
-
 def render_markdown(content):
     return markdown.markdown(
         content,
@@ -42,6 +42,14 @@ def get_git_hash():
         .decode()
     )
 
+def get_katex_version():
+    version_file = Path("static/katex/version.txt")
+
+    if not version_file.exists():
+        print("katex sources not found!", file=sys.stderr)
+        sys.exit(1)
+
+    return version_file.read_text().strip()
 
 def get_file_hash(path):
     hasher = hashlib.sha256()
@@ -59,7 +67,8 @@ def write_page(template_name, output_name, context=None):
     version = {
         "style_css_hash": get_file_hash("static/css/style.css"),
         "code_css_hash": get_file_hash("static/css/code.css"),
-        "font_css_hash": get_file_hash("static/css/font.css")
+        "font_css_hash": get_file_hash("static/css/font.css"),
+        "katex_version": get_katex_version()
     }
 
     rendered = template.render(gen_time=gen_time, **version, **(context or {}))
@@ -71,7 +80,6 @@ def write_page(template_name, output_name, context=None):
         f.write(rendered)
 
     print(f"Generated: {output_path}")
-
 
 def collect_posts():
     posts = []
@@ -103,7 +111,6 @@ def generate_index(posts):
 
     write_page("index.html", "index.html", context)
 
-
 def generate_about():
     about_post = frontmatter.load(f"{content_dir}/_about.md")
     about_html = render_markdown(about_post.content)
@@ -115,7 +122,6 @@ def generate_about():
     }
 
     write_page("about.html", "about.html", context)
-
 
 def generate_links():
     links_post = frontmatter.load(f"{content_dir}/_links.md")
@@ -129,7 +135,6 @@ def generate_links():
 def generate_404():
     write_page("404.html", "404.html")
 
-
 def generate_post(post):
     article = frontmatter.load(post["filepath"])
     post["content"] = render_markdown(article.content)
@@ -137,7 +142,6 @@ def generate_post(post):
     context = {"content": post["content"], "slug": post["slug"], **article.metadata}
 
     write_page("article.html", f"blog/{post['slug']}.html", context)
-
 
 def generate_blog(posts):
     context = {"posts": posts}

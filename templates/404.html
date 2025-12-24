@@ -3,7 +3,7 @@
 
 <head>
     {% include "partial/base_head.html" %}
-    <title>cappig.deov | 404</title>
+    <title>cappig.dev | 404</title>
     <meta name="description" content="Cappig's personal blog/project repository">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="cappig.dev">
@@ -13,16 +13,16 @@
     <meta property="og:image" content="https://cappig.dev/static/img/serpent.png">
 </head>
 
-<body>
-    {% include "partial/header.html" %}
-
+<body class="not_found">
     <main>
-        <div class="container not_found" id="index">
-            <p id="text_404_top">Error 404</p>
+        <div class="error_container">
             <img src="/static/img/computer_kitten.jpg" alt="computer kitten">
-            <p id="text_404_bottom"><i>The server kitty failed to locate the requested file!</i></p>
-            <a id="text_404_bottom" href="/">Go back home ↩</a>
+            <div class="error_overlay">404</div>
         </div>
+
+        <a href="/" class="no_color">
+            <div class="text_box" id="not_found_back">Go back home ↩</div>
+        </a>
     </main>
 
     {% include "partial/theme_button.html" %}
