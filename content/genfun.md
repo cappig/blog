@@ -3,10 +3,10 @@ title: Fun with generating functions
 description: Interesting ways to count things.
 author: Cappig
 date: 2025-09-29
-image: /static/img/article/wash_line.jpeg
+image: /static/img/article/wash_line.webp
 ---
 
-![clothesline](/static/img/article/wash_line.jpeg)*"A generating function is a clothesline on which we hang up a sequence of numbers for display" -- Herbert Wilf, [Generatingfunctionology](https://www2.math.upenn.edu/~wilf/gfology2.pdf)*
+![clothesline](/static/img/article/wash_line.webp)*"A generating function is a clothesline on which we hang up a sequence of numbers for display" -- Herbert Wilf, [Generatingfunctionology](https://www2.math.upenn.edu/~wilf/gfology2.pdf)*
 {: .img_box }
 
 ## Counting bills
@@ -59,7 +59,7 @@ We can factor the last expression and get the following closed form[^closed_form
 
 One of the most famous integer sequences in mathematics is the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_sequence) ([A000045 in the OEIS](https://oeis.org/A000045)). It gets its name from the Italian mathematician [Leonardo of Pisa](https://en.wikipedia.org/wiki/Fibonacci), known commonly as Fibonacci, who described them in his 1202 book [Liber Abaci](https://en.wikipedia.org/wiki/Liber_Abaci). Latin for "The Book of Calculation", it also introduced, among other things, the [Hindu–Arabic base 10 numerals](https://en.wikipedia.org/wiki/Hindu%E2%80%93Arabic_numeral_system) to Europe. But this sequence has been known to humans for a lot longer than that, first appearing in the writings of [Indian mathematicians](https://en.wikipedia.org/wiki/Indian_mathematics#Pingala_(300_BCE_%E2%80%93_200_BCE)) around 200 BCE.
 
-![liber abaci page](/static/img/article/liber_abaci.jpg)*A page from Liber Abaci containing the Fibonacci sequence in the right margin. Note the use of Arabic and Hindu numerals in red.*
+![liber abaci page](/static/img/article/liber_abaci.webp)*A page from Liber Abaci containing the Fibonacci sequence in the right margin. Note the use of Arabic and Hindu numerals in red.*
 {: .img_box }
 
 A given element in the Fibonacci sequence is defined as the sum of the two preceding elements, where the first two elements are given as 0 and 1. This can be expressed with the following recurrence relation
@@ -124,7 +124,7 @@ While the golden ratio has some [interesting mathematical properties](https://en
 
 Now let's take a walk in the mathematical forest. This forest is made up of [binary trees](https://en.wikipedia.org/wiki/Binary_tree) --- a type of [graph](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)) commonly used in computer science. They are rooted, and each tree node has at most 2 children.
 
-![a binary tree in real life](/static/img/article/irl_binary_tree.jpg)*Hyphaene compressa[^tree] would probably be in our forest. This specimen is a full binary tree with 31 nodes.*
+![a binary tree in real life](/static/img/article/irl_binary_tree.webp)*Hyphaene compressa[^tree] would probably be in our forest. This specimen is a full binary tree with 31 nodes.*
 {: .img_box }
 
 We may want to know how many ways there are to construct such a tree with \\(n\\) nodes. Like any combinatorial problem, the best way to solve it is to draw out the first few cases to see if we notice a pattern.
