@@ -34,7 +34,6 @@ body {
     padding: 2rem 0;
     margin: 0 auto;
     overflow-x: hidden;
-    letter-spacing: -0.02em;
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 400;
     font-size: 1.1rem;
@@ -123,6 +122,7 @@ img {
 .img_box em {
     display: inline-block;
     margin: 0 auto;
+    letter-spacing: -0.01em;
 }
 
 blockquote {
@@ -201,7 +201,7 @@ nav * {
 }
 
 .title::after {
-    left: 4.45em;
+    left: 4.5em;
     top: -0.25em;
     width: 1em;
     height: 1.6em;

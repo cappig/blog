@@ -1,5 +1,8 @@
 .PHONY: build test clean katex deploy down
 
+katex:
+	python scripts/katex.py
+
 build:
 	python scripts/generate.py
 
@@ -9,8 +12,6 @@ test:
 clean:
 	rm -rf site/
 
-katex:
-	python scripts/katex.py
 
 deploy: build
 	docker-compose up -d --build
