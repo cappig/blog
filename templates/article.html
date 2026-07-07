@@ -6,15 +6,17 @@
     <link rel="stylesheet" href="/static/css/code.css?v={{ code_css_hash }}">
     {% include "partial/katex.html" %}
     <title>cappig.dev | {{ title }}</title>
+    <link rel="canonical" href="{{ absolute_url('/blog/' ~ slug) }}">
     <meta name="description" content="{{ description }}">
+    <meta name="author" content="{{ author }}">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="cappig.dev">
     <meta property="og:title" content="{{ title }}">
     <meta property="og:description" content="{{ description }}">
-    <meta property="og:url" content="https://cappig.dev/blog/{{ slug }}">
-    <meta property="og:image" content="https://cappig.dev{{ image or '/static/img/serpent.webp' }}">
+    <meta property="og:url" content="{{ absolute_url('/blog/' ~ slug) }}">
+    <meta property="og:image" content="{{ absolute_url(image or '/static/img/serpent.webp') }}">
     <meta property="article:author" content="{{ author }}">
-    <meta property="article:published_time" content="{{ date.isoformat() }}">
+    <meta property="article:published_time" content="{{ rfc3339(date) }}">
 </head>
 
 <body>

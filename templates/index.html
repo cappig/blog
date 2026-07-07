@@ -4,13 +4,14 @@
 <head>
     {% include "partial/base_head.html" %}
     <title>cappig.dev</title>
+    <link rel="canonical" href="{{ absolute_url('/') }}">
     <meta name="description" content="Cappig's personal blog/project repository">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="cappig.dev">
     <meta property="og:title" content="cappig.dev">
     <meta property="og:description" content="Cappig's personal blog/project repository">
-    <meta property="og:url" content="https://cappig.dev">
-    <meta property="og:image" content="https://cappig.dev/static/img/serpent.webp">
+    <meta property="og:url" content="{{ absolute_url('/') }}">
+    <meta property="og:image" content="{{ absolute_url('/static/img/serpent.webp') }}">
 </head>
 
 <body>

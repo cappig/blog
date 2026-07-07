@@ -6,8 +6,8 @@ import unidecode
 import subprocess
 import os
 import sys
-from datetime import datetime, timezone
-from jinja2 import Environment, FileSystemLoader
+from datetime import date, datetime, time, timezone
+from jinja2 import Environment, FileSystemLoader, StrictUndefined, select_autoescape
 from pathlib import Path
 
 content_dir = Path("content")
@@ -15,10 +15,47 @@ template_dir = Path("templates")
 output_dir = Path("site")
 site_url = "https://cappig.dev"
 
-env = Environment(loader=FileSystemLoader(template_dir))
+env = Environment(
+    loader=FileSystemLoader(template_dir),
+    autoescape=select_autoescape(["html", "xml"]),
+    undefined=StrictUndefined,
+)
 env.globals["strftime"] = lambda format, dt: dt.strftime(format)
 
 gen_time = datetime.now(timezone.utc)
+
+
+def absolute_url(path):
+    if path.startswith(("http://", "https://")):
+        return path
+
+    if not path.startswith("/"):
+        path = f"/{path}"
+
+    return f"{site_url}{path}"
+
+def rfc3339(dt):
+    if isinstance(dt, datetime):
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+
+        return dt.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
+
+    if isinstance(dt, date):
+        return (
+            datetime.combine(dt, time.min, timezone.utc)
+            .isoformat()
+            .replace("+00:00", "Z")
+        )
+
+    return str(dt)
+
+def escape_cdata(text):
+    return str(text).replace("]]>", "]]]]><![CDATA[>")
+
+env.globals["absolute_url"] = absolute_url
+env.globals["rfc3339"] = rfc3339
+env.filters["cdata"] = escape_cdata
 
 
 def slugify(text):
@@ -62,6 +99,17 @@ def get_file_hash(path):
     return hasher.hexdigest()[:8]
 
 
+def validate_post_metadata(post_info, filepath):
+    required_fields = ("title", "description", "author", "date")
+    missing = [field for field in required_fields if not post_info.get(field)]
+
+    if missing:
+        raise ValueError(f"{filepath}: missing required metadata: {', '.join(missing)}")
+
+    if not isinstance(post_info["date"], date):
+        raise ValueError(f"{filepath}: date metadata must be a date")
+
+
 def write_page(template_name, output_name, context=None):
     template = env.get_template(template_name)
 
@@ -91,6 +139,8 @@ def collect_posts():
             post = frontmatter.load(filepath)
 
             post_info = dict(post.metadata)
+
+            validate_post_metadata(post_info, filepath)
 
             post_info["filepath"] = filepath
             post_info["slug"] = slugify(post_info["title"])
@@ -140,25 +190,29 @@ def generate_post(post):
     article = frontmatter.load(post["filepath"])
     post["content"] = render_markdown(article.content)
 
-    context = {"content": post["content"], "slug": post["slug"], **article.metadata}
+    metadata = dict(article.metadata)
+    metadata.setdefault("image", "/static/img/serpent.webp")
+
+    context = {"content": post["content"], "slug": post["slug"], **metadata}
 
     write_page("article.html", f"blog/{post['slug']}.html", context)
 
 def generate_blog(posts):
-    context = {"posts": posts}
+    feed_updated = max((post["date"] for post in posts), default=gen_time)
+    context = {"posts": posts, "feed_updated": feed_updated}
     write_page("blog.html", "blog.html", context)
     write_page("feed.xml", "blog/feed.xml", context)
 
 def generate_sitemap(posts):
     pages = [
-        {"loc": f"{site_url}/"},
-        {"loc": f"{site_url}/about"},
-        {"loc": f"{site_url}/links"},
-        {"loc": f"{site_url}/blog"},
+        {"loc": absolute_url("/"), "lastmod": None},
+        {"loc": absolute_url("/about"), "lastmod": None},
+        {"loc": absolute_url("/links"), "lastmod": None},
+        {"loc": absolute_url("/blog"), "lastmod": None},
     ]
 
     pages.extend(
-        {"loc": f"{site_url}/blog/{post['slug']}", "lastmod": post.get("date")}
+        {"loc": absolute_url(f"/blog/{post['slug']}"), "lastmod": post.get("date")}
         for post in posts
     )
 
