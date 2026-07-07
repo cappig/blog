@@ -2,7 +2,7 @@
 
 This is my new blog. The old [neocities page](https://cappig.neocities.org/) can be found on the `old` branch.
 
-To generate the html for the site run `python generate.py`.
+To generate the HTML for the site run `make build`.
 
 To deploy the site host `./site` at `/` and `./static` at `/static`. Domains should first try to locate their respective `.html` file, eg. `/foo -> ./site/foo.html`. The provided `Caddyfile` is already configured to do this.
 
