@@ -13,6 +13,7 @@ from pathlib import Path
 content_dir = Path("content")
 template_dir = Path("templates")
 output_dir = Path("site")
+site_url = "https://cappig.dev"
 
 env = Environment(loader=FileSystemLoader(template_dir))
 env.globals["strftime"] = lambda format, dt: dt.strftime(format)
@@ -148,6 +149,21 @@ def generate_blog(posts):
     write_page("blog.html", "blog.html", context)
     write_page("feed.xml", "blog/feed.xml", context)
 
+def generate_sitemap(posts):
+    pages = [
+        {"loc": f"{site_url}/"},
+        {"loc": f"{site_url}/about"},
+        {"loc": f"{site_url}/links"},
+        {"loc": f"{site_url}/blog"},
+    ]
+
+    pages.extend(
+        {"loc": f"{site_url}/blog/{post['slug']}", "lastmod": post.get("date")}
+        for post in posts
+    )
+
+    write_page("sitemap.xml", "sitemap.xml", {"pages": pages})
+
 
 def main():
     os.makedirs(output_dir, exist_ok=True)
@@ -163,6 +179,7 @@ def main():
         generate_post(post)
 
     generate_blog(posts)
+    generate_sitemap(posts)
     generate_index(posts)
 
     print("~ Site generated! ~")
